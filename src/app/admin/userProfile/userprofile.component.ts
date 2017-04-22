@@ -22,18 +22,18 @@ export class userProfileComponent implements OnInit {
 
 	 constructor(){ this.getPost(); }
 	 ngOnInit() {
-	 	
-	 	
+
+
 
 	 }
 
-	 
+
 	 getPost() {
-	  
+
 	   let dbRef = firebase.database().ref('userProfile/');
 		dbRef.once('value').then ((snapshot)=> {
 	   		this.userData = snapshot.val();
-	   		 if(!this.userData){ 
+	   		 if(!this.userData){
 			   this.formDisplay = false;
 			   alert(this.formDisplay)
 			   }else {
@@ -49,17 +49,16 @@ export class userProfileComponent implements OnInit {
 			        list.push (item);
 			   });
 			   this.userData =list[0];
-			   console.log(this.userData[0]);
 	   		}
 	   });
 
-	  
+
 	 }
 
 	createPost(){
 		alert("create post")
         let storageRef = firebase.storage().ref();
-        
+
                 let dbRef = firebase.database().ref('userProfile/');
                 let newPost = dbRef.push();
                 newPost.set ({
@@ -70,6 +69,6 @@ export class userProfileComponent implements OnInit {
                 })
             .catch ((error)=>{
                 alert(`failed upload: ${error}`);
-            });            
+            });
     }
 }
