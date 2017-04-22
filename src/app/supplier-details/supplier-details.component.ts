@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -7,13 +7,21 @@ import { DataService } from '../data.service';
   styleUrls: ['./supplier-details.component.css']
 })
 export class SupplierDetailsComponent implements OnInit {
+    @Input() listOfStores;
+
+    public listOfBrands = ["Bisleri", "Kinley", "Aqua", "Nestle"]
+    public listOfItemsType = ["Tanker Water", "Can Water"]
+
+    public brandListCart = {};
 
     constructor(public dataService: DataService) { }
 
-    public abc = {};
-    public arr = [];
-    public listOfBrands = ["Bisleri", "Kinley", "Aqua", "Nestle"]
-    public listOfItemsType = ["Tanker Water", "Can Water"]
+    handleTargetBrand(brand) {
+        this.brandListCart[Object.keys(brand)[0]] = brand
+        console.log(this.brandListCart)
+    }
+
+    
 
     ngOnInit() {
     }
@@ -22,5 +30,5 @@ export class SupplierDetailsComponent implements OnInit {
         console.log("S")
     }
     
-    
+   
 }

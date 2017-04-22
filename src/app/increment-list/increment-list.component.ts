@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-increment-list',
@@ -6,19 +6,26 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./increment-list.component.css']
 })
 export class IncrementListComponent implements OnInit {
-	@Input() brand;
-  @Input() index;
-	constructor() { }
-	public name1 = "0";
+    public name1 = "0";
+    public cartBrands = {};
 
+	@Input() brand;
+    @Input() index;
+
+    @Output() targetBrand = new EventEmitter();
+
+	constructor() {
+        
+    }
+	
 	ngOnInit() {
 	}
+
 	incrementalValue(e){
-		console.log(e.target.value)
+        this.cartBrands[this.brand] = e.target.value;
+        this.targetBrand.emit(this.cartBrands);
 	}
   	changeValue(e){
-  		console.log(this.brand)
-        // debugger
         let val = e.target.parentElement.children[1].value;
         
         if(e.target.classList.contains("inc")){
