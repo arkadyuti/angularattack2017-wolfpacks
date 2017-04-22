@@ -1,7 +1,7 @@
 <div class="card-content">
   <div class="content-wrapper">
     <sebm-google-map [latitude]="lat" [longitude]="lng">
-      	<sebm-google-map-marker *ngFor="let mark of markers; let i = index" [latitude]="mark.lat" [longitude]="mark.lng" [label]="mark.label">
+      	<sebm-google-map-marker *ngFor="let mark of listOfStores; let i = index" [latitude]="mark.lat" [longitude]="mark.lng" [label]="mark.label">
       		<sebm-google-map-info-window>
       			<strong>{{mark.title}}</strong>
       			<ul *ngIf="(mark.availableItems.length > 0)">
