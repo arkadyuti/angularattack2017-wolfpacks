@@ -1,12 +1,14 @@
 <app-header></app-header>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8">
-			<app-map-search></app-map-search>
-			<app-map [listOfStores]="listOfStores"></app-map>
+	<div class="row" style="width: 90%;margin: 0 auto;">
+			<div class="card card-plain">
+				<app-map-search></app-map-search>
+				<app-map [listOfStores]="listOfStores"></app-map>
+			</div>
 		</div>
 		<div class="col-md-4">
-			<app-menu [listOfStores]="listOfStores"></app-menu>
+			<!-- <app-menu [listOfStores]="listOfStores"></app-menu> -->
+			<app-supplier-details></app-supplier-details>
 		</div>
 	</div>
 </div>
