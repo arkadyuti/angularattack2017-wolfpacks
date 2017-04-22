@@ -25,15 +25,23 @@ export class DataService {
 
   getItems() {
     return new Promise( (resolve, reject) => {
-      let abc = {
-        "lat": this.location.lat(),
-        "lng": this.location.lng(),
+      let abc = [{
+        "lat": 52,
+        "lng": 60,
         "label": "C",
         "draggable": false,
         "title": "XYZ Water Supply",
         "availableItems": ["Can Water"]
-      }
-      resolve([abc]);
+      },
+      {
+        "lat": 70,
+        "lng": 50,
+        "label": "C",
+        "draggable": false,
+        "title": "ABC Water Supply",
+        "availableItems": ["Can Water"]
+      }]
+      resolve(abc);
     })
   }
 
