@@ -1,0 +1,16 @@
+<div class="card-content">
+  <div class="content-wrapper">
+    <sebm-google-map [latitude]="lat" [longitude]="lng">
+      	<sebm-google-map-marker *ngFor="let mark of markers; let i = index" [latitude]="mark.lat" [longitude]="mark.lng" [label]="mark.label">
+      		<sebm-google-map-info-window>
+      			<strong>{{mark.title}}</strong>
+      			<ul *ngIf="(mark.availableItems.length > 0)">
+      				<li *ngFor="let item of mark.availableItems">
+      					{{item}}
+      				</li>
+      			</ul>
+      		</sebm-google-map-info-window>
+      	</sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
+</div>

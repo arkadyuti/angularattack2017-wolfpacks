@@ -1,0 +1,38 @@
+<div class="col-md-8">
+            <div class="card">
+                <div class="card-header" data-background-color="red">
+                    <h4 class="title">Login</h4>
+                 </div>
+                <div class="card-content">
+                    <form>
+                        <div class="row">
+                            
+                            <div class="col-md-3">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Username</label>
+                                    <input type="text" class="form-control" placeholder="Enter Email Address" id="email" 
+                                   [(ngModel)]="email" name="email" required #em="ngModel">
+                                   <span [hidden]="em.valid || em.pristine" 
+                                  class="material-input alert callout"> Email is required</span></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Password</label>
+                                    <input type="password" class="form-control" placeholder="Enter Password" id="password1" 
+            [(ngModel)]="password1" name="password1" required #pwd1="ngModel">
+                                <span [hidden]="pwd1.valid || pwd1.pristine" class="alert callout material-input"> Password required</span></div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-danger pull-right" type="button" (click)="signup()">Sign Up</button>
+                        <button class="btn btn-danger pull-right" type="button" (click)="login()">Login</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
