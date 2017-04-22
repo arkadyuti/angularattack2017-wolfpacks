@@ -14,13 +14,17 @@ export class DataService {
 
   fetchData() {
     return this.http.get('./data/data.json').map( (res) => {
+        this.Items = res.json();
         return res.json();
     })
   }
 
   setLocation(obj) {
     this.location = obj;
+  }
 
+  getLocation() {
+    return this.location;
   }
 
   getItems() {

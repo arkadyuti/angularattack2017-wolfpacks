@@ -41,8 +41,8 @@ export class SearchComponent implements OnInit {
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
-
-          this.dataService.setLocation(place.geometry.location);
+          debugger;
+          this.dataService.setLocation(place);
           
           this.router.navigate(['/search-result']);
         });
