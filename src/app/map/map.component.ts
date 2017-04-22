@@ -26,7 +26,7 @@ export class MapComponent {
   }
   ngOnInit() {
   	let cordinates = this.dataService.getLocation();
-  	this.lat = cordinates.geometry.location.lat();
-  	this.lng = cordinates.geometry.location.lng();
+  	this.lat = cordinates.lat;
+  	this.lng = cordinates.lng;
   }
 }
