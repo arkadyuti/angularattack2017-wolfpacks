@@ -33,7 +33,7 @@ export class UserService implements CanActivate {
     verifyLogin(url: string): boolean {
         if (this.userLoggedIn) { return true; }
 
-        this.router.navigate(['/admin/login']);
+        this.router.navigate(['/userprofile']);
         return false;
     }
 
@@ -47,17 +47,20 @@ export class UserService implements CanActivate {
     verifyUser() {
         this.authUser = firebase.auth().currentUser;
         if (this.authUser) {
-
-            alert(`Welcome ${this.authUser.email}`);
+            this.router.navigate(['/userprofile']);
             this.loggedInUser = this.authUser.email;
             this.userLoggedIn = true;
-            this.router.navigate(['/admin']);
+            
         }
+        
     }
 
     login(loginEmail: string, loginPassword: string) {
-        firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
-            .catch(function(error) {
+
+        firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword).then(function() {
+             
+        }).catch(function(error) {
+                
                 alert(`${error.message} Unable to login. Try again!`);
         });
     }

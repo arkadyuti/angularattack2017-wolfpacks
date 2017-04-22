@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-import { Blog } from '../adminShared/blog';
+import { User } from '../adminShared/user';
 
 @Injectable()
 
-export class BlogAdminService {
+export class userProfileService {
 
-    createPost(post: Blog){
+    createPost(post: User){
         let storageRef = firebase.storage().ref();
         storageRef.child(`images/${post.imgTitle}`).putString(post.img, 'base64')
             .then((snapshot) => { 
                 let url = snapshot.metadata.downloadURLs[0];
-                let dbRef = firebase.database().ref('blogPosts/');
+                let dbRef = firebase.database().ref('userProfile/');
                 let newPost = dbRef.push();
                 newPost.set ({
-                    title: post.title,
-                    content: post.content,
+                    name: post.name,
+                    address: post.address,
+                    phonenumber:post.phonenumber,
                     imgTitle: post.imgTitle,
                     img: url,
                     id: newPost.key
@@ -26,17 +27,17 @@ export class BlogAdminService {
             });            
     }
 
-    editPost(update: Blog){
-        let dbRef = firebase.database().ref('blogPosts/').child(update.id)
+    editPost(update: User){
+        let dbRef = firebase.database().ref('userProfile/').child(update.id)
             .update({
-                title: update.title,
-                content: update.content
+                address: update.address,
+                phonenumber: update.phonenumber
             });
         alert('post updated');       
     }
 
-    removePost(deletePost: Blog){
-        let dbRef = firebase.database().ref('blogPosts/').child(deletePost.id).remove();
+    removePost(deletePost: User){
+        let dbRef = firebase.database().ref('userProfile/').child(deletePost.id).remove();
         alert('post deleted');
         let imageRef = firebase.storage().ref().child(`images/${deletePost.imgTitle}`)
             .delete()

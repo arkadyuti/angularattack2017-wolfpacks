@@ -9,13 +9,16 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { userProfileComponent }    from './admin/userProfile/userprofile.component';
+import { UserService }    from './admin/adminShared/user.service';
 
 export const router: Routes = [
 	{ path:'', redirectTo: 'search-result', pathMatch: 'full'},
 	{ path:'home', component: HomeComponent},
 	{ path:'search-result', component: SearchResultComponent},
 	{ path:'login', component: LoginComponent},
-	{ path:'signup', component: SignUpComponent}
+	{ path:'signup', component: SignUpComponent},
+	{ path: 'userprofile', component: userProfileComponent }
 
 ]
 
