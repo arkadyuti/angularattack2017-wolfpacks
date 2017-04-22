@@ -8,12 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartItemTypeComponent implements OnInit {
 	@Input() itemType;
 	@Input() index;
+
+	public isChecked = false;
 	constructor() { }
 
 	ngOnInit() {
 	}
 	availableItems(e, value){
         console.log(e.target.checked)
+        this.isChecked = e.target.checked;
         console.log(this.index)
     }
 }

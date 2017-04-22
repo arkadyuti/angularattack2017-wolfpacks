@@ -16,10 +16,15 @@
 	    		</div>
 	    	</div>
 	    	<div class="order-item">
+	    		<div class="order-item-heading">Available Brands</div>
 	    		<div *ngFor="let brand of listOfBrands" class="order-item-container">
 	    			<app-increment-list [brand]="arr"></app-increment-list>
 	    		</div>
 	    	</div>
 	    </div>
 	</div>
+	<div class="cartBtn">
+		<button type="button" class="btn btn-info btn-primary btn-lg btn-block pointer" (click)="checkBtn($event)">Chekout</button>
+	</div>
+	
 </div>

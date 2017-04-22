@@ -18,7 +18,9 @@ export class SupplierDetailsComponent implements OnInit {
     ngOnInit() {
     }
 
-
+    checkBtn(){
+        console.log("S")
+    }
     
     
 }

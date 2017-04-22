@@ -24,6 +24,7 @@ import { MapSearchComponent } from './map-search/map-search.component';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 import { IncrementListComponent } from './increment-list/increment-list.component';
 import { CartItemTypeComponent } from './cart-item-type/cart-item-type.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CartItemTypeComponent } from './cart-item-type/cart-item-type.component
     MapSearchComponent,
     SupplierDetailsComponent,
     IncrementListComponent,
-    CartItemTypeComponent
+    CartItemTypeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
