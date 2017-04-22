@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private LOGO = require('../vendor/img/angular2-logo-red.png');
+  private LOGO = require('./vendor/img/angular2-logo-red.png');
 
   constructor() { }
 
