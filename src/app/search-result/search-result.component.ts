@@ -12,10 +12,10 @@ export class SearchResultComponent implements OnInit {
   listOfStores : any = [];
 
   ngOnInit() {
-    this.getListOfStores();
+    this.getListOfStores({lat:20});
   }
 
-  getListOfStores() {
+  getListOfStores(object) {
     this.dataService.fetchData().subscribe( (isData) => {
       if(isData) {
         this.dataService.getItems().then( (res) => {
@@ -23,6 +23,6 @@ export class SearchResultComponent implements OnInit {
         });
       }
     })
-    
+
    }
   }

@@ -13,7 +13,7 @@ import { userProfileComponent }    from './admin/userProfile/userprofile.compone
 import { UserService }    from './admin/adminShared/user.service';
 
 export const router: Routes = [
-	{ path:'', redirectTo: 'search-result', pathMatch: 'full'},
+	{ path:'', redirectTo: 'home', pathMatch: 'full'},
 	{ path:'home', component: HomeComponent},
 	{ path:'search-result', component: SearchResultComponent},
 	{ path:'login', component: LoginComponent},
@@ -23,6 +23,3 @@ export const router: Routes = [
 ]
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
-
-
-
