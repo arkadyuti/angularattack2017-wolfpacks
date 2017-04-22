@@ -2,8 +2,8 @@
 	<div>Kinley</div>
 	<div>&#8377; 16</div>
 </div>
-<input type="text" class="hiddenValue" (click)="incrementalValue($event)" name="itemQuantityKinley" [value]= "name1 " id="itemQuantityKinley" >
-<label for="itemQuantityKinley" class="item-right-increment pull-right">
+<input type="text" class="hiddenValue" (click)="incrementalValue($event)" name="itemQuantityKinley{{index}}" [value]= "name1 " id="itemQuantityKinley{{index}}" >
+<label for="itemQuantityKinley{{index}}" class="item-right-increment pull-right">
 	<span class="ui left attached button dec" (click)="changeValue($event)"> – </span>
 	<input type="text" class="inc-dec" [(ngModel)]="name1" readonly="" >
 	<span class="ui right attached button inc" (click)="changeValue($event)"> + </span>
