@@ -42,6 +42,9 @@ export class DataService {
     })
   }
 
+  // setItem(item) {
+  //   console.log(item);
+  // }
 }
 // interface Options {
 //   id: string,

@@ -3,13 +3,14 @@
 	<div class="row" style="width: 90%;margin: 0 auto;">
 		<div class="col-md-8">
 				<div class="card card-plain">
-				<app-map-search></app-map-search>
-				<app-map [listOfStores]="listOfStores" (centerChange)="getListOfStores($event)"></app-map>
+				 <app-map-search></app-map-search>
+				 <app-map [listOfStores]="listOfStores" (centerChange)="getListOfStores($event)"></app-map>
 			</div>
 		</div>
 		<div class="col-md-4">
-			<app-menu [listOfStores]="listOfStores"></app-menu>
-			<!-- <app-supplier-details [listOfStores]="listOfStores"></app-supplier-details> -->
+			<!-- <app-menu [listOfStores]="listOfStores"></app-menu> -->
+			<app-supplier-details [listOfStores]="listOfStores"></app-supplier-details>
 		</div>
 	</div>
 </div>
+<app-footer></app-footer>

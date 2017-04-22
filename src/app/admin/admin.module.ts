@@ -8,9 +8,25 @@ import { LoginComponent }    from './login/login.component';
 import { SignUpComponent }    from './signUp/sign-up.component';
 import { UserService } from './adminShared/user.service';
 import { TruncatePipe } from './adminShared/trunc.pipe';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { userProfileComponent }    from './userProfile/userprofile.component';
 
 
+const myFirebaseConfig = {
+  
+         apiKey: "AIzaSyDJR3ZTCpei287mU7DzviEC6q34mVvRrNk",
+         authDomain: "angularattack-b35c6.firebaseapp.com",
+         databaseURL: "https://angularattack-b35c6.firebaseio.com",
+         projectId: "angularattack-b35c6",
+         storageBucket: "angularattack-b35c6.appspot.com",
+         messagingSenderId: "807124795822"
+        
+};
 
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect
+};
 
 const AdminRoutes: Routes = [
     { 
@@ -27,6 +43,7 @@ const AdminRoutes: Routes = [
     imports: [
         CommonModule,
         FormsModule,
+        AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig),
         RouterModule.forChild(AdminRoutes)
     ],
     exports: [
@@ -39,7 +56,8 @@ const AdminRoutes: Routes = [
         AdminMenuComponent,
         LoginComponent,
         SignUpComponent,
-        TruncatePipe
+        TruncatePipe,
+        userProfileComponent
         
     ],
     providers: [
