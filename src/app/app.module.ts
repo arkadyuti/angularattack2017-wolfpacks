@@ -22,6 +22,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { DataService } from './data.service';
 import { MapSearchComponent } from './map-search/map-search.component';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
+import { IncrementListComponent } from './increment-list/increment-list.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SupplierDetailsComponent } from './supplier-details/supplier-details.co
     HomeComponent,
     SearchResultComponent,
     MapSearchComponent,
-    SupplierDetailsComponent
+    SupplierDetailsComponent,
+    IncrementListComponent
   ],
   imports: [
     BrowserModule,

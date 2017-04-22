@@ -16,35 +16,13 @@
 	    				<div>Tanker Water</div>
 	    				<div>&#8377; 16</div>
 	    			</div>
-	    			<input type="checkbox" class="hiddenValue" (click)="brands($event)" name="slectCheckbox" id="slectCheckbox" >
+	    			<input type="checkbox" class="hiddenValue" (click)="availableItems($event)" name="slectCheckbox" id="slectCheckbox" >
 	    			<label for="slectCheckbox" class="item-right pull-right">Select</label>
 	    		</div>
 	    	</div>
 	    	<div class="order-item">
-	    		<div class="order-item-heading">Available brands</div>
-	    		<div class="order-item-container">
-	    			<div class="item-left pull-left">
-	    				<div>Bisleri</div>
-	    				<div>&#8377; 16</div>
-	    			</div>
-	    			<input type="text" class="hiddenValue" (click)="brandss($event)" name="itemQuantityBisleri" [value]= "name1 " id="itemQuantityBisleri" >
-	    			<label for="itemQuantityKinley" class="item-right-increment pull-right">
-	    				<span class="ui left attached button dec" (click)="changeValue($event)"> – </span>
-	    				<input type="text" class="inc-dec" [(ngModel)]="name1" readonly="" >
-	    				<span class="ui right attached button inc" (click)="changeValue($event)"> + </span>
-	    			</label>
-	    		</div>
-	    		<div class="order-item-container">
-	    			<div class="item-left pull-left">
-	    				<div>Kinley</div>
-	    				<div>&#8377; 16</div>
-	    			</div>
-	    			<input type="text" class="hiddenValue" (click)="brandss($event)" name="itemQuantityKinley" [value]= "name1 " id="itemQuantityKinley" >
-	    			<label for="itemQuantityKinley" class="item-right-increment pull-right">
-	    				<span class="ui left attached button dec" (click)="changeValue($event)"> – </span>
-	    				<input type="text" class="inc-dec" [(ngModel)]="name1" readonly="" >
-	    				<span class="ui right attached button inc" (click)="changeValue($event)"> + </span>
-	    			</label>
+	    		<div *ngFor="let arr of arr1" class="order-item-container">
+	    			<app-increment-list [abcd]="arr"></app-increment-list>
 	    		</div>
 	    	</div>
 	    </div>
