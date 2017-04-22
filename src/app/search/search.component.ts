@@ -21,12 +21,13 @@ export class SearchComponent implements OnInit {
       private mapsAPILoader: MapsAPILoader,
       private ngZone: NgZone,
       private dataService: DataService,
-      private router: Router) { }
+      private router: Router) { },
+      
 
   ngOnInit() {
     //create search FormControl
     this.searchControl = new FormControl();
-
+    declare var google: any;
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
