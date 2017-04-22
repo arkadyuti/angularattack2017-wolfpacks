@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { DataService } from '../data.service';
 
@@ -9,12 +9,12 @@ import { DataService } from '../data.service';
   providers: [DataService]
 })
 export class MenuComponent implements OnInit {
-
+  @Input() listOfStores;
   menuItems: Array<Object> = [];
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-  	
+
   }
 
 }

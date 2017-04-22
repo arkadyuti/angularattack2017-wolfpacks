@@ -2,14 +2,14 @@
 <div class="container-fluid">
 	<div class="row" style="width: 90%;margin: 0 auto;">
 		<div class="col-md-8">
-			<div class="card card-plain">
+				<div class="card card-plain">
 				<app-map-search></app-map-search>
-				<app-map></app-map>	
+				<app-map [listOfStores]="listOfStores"></app-map>
 			</div>
 		</div>
 		<div class="col-md-4">
-			<!-- <app-menu></app-menu> -->
-			<app-supplier-details></app-supplier-details>
+			<app-menu [listOfStores]="listOfStores"></app-menu>
+			<!-- <app-supplier-details [listOfStores]="listOfStores"></app-supplier-details> -->
 		</div>
 	</div>
 </div>

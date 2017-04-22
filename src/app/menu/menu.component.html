@@ -9,14 +9,21 @@
 	</div>
 	<div class="sidebar-wrapper">
 	    <div class="nav-container">
-	        <ul class="nav">
+	    	<div class="error" *ngIf="listOfStores?.length === 0">No Shops Found</div>
+	        <ul class="nav" *ngIf="listOfStores.length > 0">
 	            <li class="active">
 	                <a href="#/dashboard">
 	                    <i class="material-icons">opacity</i>
 	                    <p>Dashboard</p>
 	                </a>
 	            </li>
-	            <li class="">
+	            <li *ngFor="let shop of listOfStores">
+	            	<a href="#/user">
+	                    <i class="material-icons">opacity</i>
+	                    <p>{{shop.company}}</p>
+	                </a>
+	            </li>
+	            <!-- <li class="">
 	                <a href="#/user">
 	                    <i class="material-icons">opacity</i>
 	                    <p>User Profile</p>
@@ -87,10 +94,11 @@
 	                    <i class="material-icons">opacity</i>
 	                    <p>Notifications</p>
 	                </a>
-	            </li>
+	            </li> -->
 	            
 	        </ul>
-		    <div class="moving-tab" style="width: 310px; transform: translate3d(0px, 20px, 0px); transition: all 0.5s cubicBezier(0.29, 1.42, 0.79, 1);">
+
+		    <div class="moving-tab" *ngIf="listOfStores.length > 0" style="width: 310px; transform: translate3d(0px, 20px, 0px); transition: all 0.5s cubicBezier(0.29, 1.42, 0.79, 1);">
 				<i class="material-icons">dashboard</i>
 				<p>Dashboard</p>
 			</div>

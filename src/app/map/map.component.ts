@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';
 import { Http } from '@angular/http';
@@ -9,31 +9,21 @@ import 'rxjs/Rx';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
-  
+export class MapComponent {
+  iconUrl = "assets/rain.png";
+  @Input() listOfStores;
   title: string = 'Map';
-  zoom: number = 8;
-  
+  zoom: number = 12;
+
   // initial center position for the map
-  lat: number = 51.673858;
-  lng: number = 7.815982;
+  lat: number;
+  lng: number;
 
-  markers: any = [];
-
-  constructor(private dataService: DataService) {
-
-  }
-
+  constructor (private dataService: DataService) {}
 
   ngOnInit() {
-  	// this.dataService.getLocation().then( (res) => {
-   //    debugger;
-   //  })
-   this.dataService.getItems().then( (res) => {
-     this.markers = res;
-     // this.lat = res[0].lat();
-     // this.lng = res[0].lng();
-   });
+  	let cordinates = this.dataService.getLocation();
+  	this.lat = cordinates.geometry.location.lat();
+  	this.lng = cordinates.geometry.location.lng();
   }
-
 }

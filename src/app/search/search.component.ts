@@ -18,8 +18,8 @@ export class SearchComponent implements OnInit {
   public searchElementRef: ElementRef;
 
   constructor(
-      private mapsAPILoader: MapsAPILoader, 
-      private ngZone: NgZone, 
+      private mapsAPILoader: MapsAPILoader,
+      private ngZone: NgZone,
       private dataService: DataService,
       private router: Router) { }
 
@@ -30,20 +30,19 @@ export class SearchComponent implements OnInit {
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ["address"]
+        types: ["establishment"]
       });
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
           //get the place result
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-  
+
           //verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
+          this.dataService.setLocation(place);
 
-          this.dataService.setLocation(place.geometry.location);
-          
           this.router.navigate(['/search-result']);
         });
       });

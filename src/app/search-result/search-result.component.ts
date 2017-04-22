@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-search-result',
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
+  listOfStores : any = [];
 
   ngOnInit() {
-
+    this.getListOfStores();
   }
 
-}
+  getListOfStores() {
+    this.dataService.fetchData().subscribe( (isData) => {
+      if(isData) {
+        this.dataService.getItems().then( (res) => {
+          this.listOfStores = res;
+        });
+      }
+    })
+    
+   }
+  }
