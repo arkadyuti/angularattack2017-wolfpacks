@@ -2,10 +2,48 @@ body{
     background-color:  #EEEEEE;
 }
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    /*font-family: "Roboto", "Helvetica", "Arial", sans-serif;*/
     font-weight: 300;
     line-height: 1.5em;
 }
+/*Supplier details - START*/
+.supplier-details-wrapper{
+    padding: 15px;
+}
+.supplier-details-wrapper .order-item-container{
+    max-width: 100%;
+    height: 65px;
+    background-color: #fff;
+    position: relative;
+}
+.supplier-details-wrapper .order-item{
+    margin-bottom: 15px;
+}
+.supplier-details-wrapper .item-right{
+    height: 26px;
+    /*width: 64px;*/
+    border: 1px solid green;
+    padding: 2px 14px 0px 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    color: green;
+    margin: 19px 19px 0 0;
+}
+.supplier-details-wrapper .item-left{
+    padding: 13px 0 0 35px;
+}
+.supplier-details-wrapper .item-left:first-child{
+    font-size: 17px;
+}
+.supplier-details-wrapper .item-left:last-child{
+    font-size: 15px;
+}
+
+.supplier-details-wrapper .order-item-heading{
+    font-size: 17px;
+}
+
+/*Supplier details - END*/
 /*Sidebar - START*/
 .sidebar, .main-panel {
     -webkit-transition-property: top,bottom;
@@ -45,7 +83,7 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
     position: relative;
     height: 430px;
     overflow: auto;
-    width: 260px;
+    /*width: 260px;*/
     z-index: 4;
     overflow-x: hidden;
 }
@@ -94,6 +132,7 @@ a .material-icons {
 }
 
 .content-wrapper-sidebar {
+    min-width: 360px;
     height: 611px;
     border: 0;
     box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
