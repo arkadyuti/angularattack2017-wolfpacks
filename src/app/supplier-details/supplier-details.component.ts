@@ -11,5 +11,7 @@ export class SupplierDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  somefun(){
+  	console.log("S")
+  }
 }

@@ -21,6 +21,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 
 import { DataService } from './data.service';
 import { MapSearchComponent } from './map-search/map-search.component';
+import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MapSearchComponent } from './map-search/map-search.component';
     SearchComponent,
     HomeComponent,
     SearchResultComponent,
-    MapSearchComponent
+    MapSearchComponent,
+    SupplierDetailsComponent
   ],
   imports: [
     BrowserModule,
