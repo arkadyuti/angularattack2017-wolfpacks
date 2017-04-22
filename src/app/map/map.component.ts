@@ -10,6 +10,7 @@ import 'rxjs/Rx';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent {
+  iconUrl = "assets/rain.png";
   @Input() listOfStores;
   title: string = 'Map';
   zoom: number = 8;
