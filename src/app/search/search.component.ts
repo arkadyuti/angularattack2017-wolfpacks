@@ -18,8 +18,8 @@ export class SearchComponent implements OnInit {
   public searchElementRef: ElementRef;
 
   constructor(
-      private mapsAPILoader: MapsAPILoader, 
-      private ngZone: NgZone, 
+      private mapsAPILoader: MapsAPILoader,
+      private ngZone: NgZone,
       private dataService: DataService,
       private router: Router) { }
 
@@ -41,8 +41,7 @@ export class SearchComponent implements OnInit {
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
-
-          this.dataService.setLocation(place.geometry.location);
+          this.dataService.setLocation(place);
 
           this.router.navigate(['/search-result']);
         });

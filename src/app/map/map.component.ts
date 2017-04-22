@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';
 import { Http } from '@angular/http';
@@ -13,10 +13,17 @@ export class MapComponent {
   iconUrl = "assets/rain.png";
   @Input() listOfStores;
   title: string = 'Map';
-  zoom: number = 8;
+  zoom: number = 12;
 
   // initial center position for the map
-  lat: number = 51.673858;
-  lng: number = 7.815982;
+  lat: number;
+  lng: number;
 
+  constructor (private dataService: DataService) {}
+
+  ngOnInit() {
+  	let cordinates = this.dataService.getLocation();
+  	this.lat = cordinates.geometry.location.lat();
+  	this.lng = cordinates.geometry.location.lng();
+  }
 }
