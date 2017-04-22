@@ -21,13 +21,13 @@ export class SearchComponent implements OnInit {
       private mapsAPILoader: MapsAPILoader,
       private ngZone: NgZone,
       private dataService: DataService,
-      private router: Router) { },
-      
+      private router: Router) { }
+
 
   ngOnInit() {
     //create search FormControl
     this.searchControl = new FormControl();
-    declare var google: any;
+    // declare var google: any;
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
@@ -42,7 +42,12 @@ export class SearchComponent implements OnInit {
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
-          this.dataService.setLocation(place);
+          this.dataService.setLocation({
+            lat:place.geometry.location.lat(),
+            lng:place.geometry.location.lng()
+          });
+
+          this.dataService.setFormattedAddress(place.formatted_address);
 
           this.router.navigate(['/search-result']);
         });

@@ -6,6 +6,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class DataService {
   location: any;
+  formatted_address: string;
   Items: any = [];
 
   constructor(private http : Http) {
@@ -29,10 +30,10 @@ export class DataService {
 
   getItems(): any {
     return new Promise( (resolve, reject) => {
-      let lowLatValue = this.location.geometry.location.lat() - 0.3;
-      let highLatValue = this.location.geometry.location.lat() + 0.3;
-      let lowLngValue = this.location.geometry.location.lng() - 0.3;
-      let highLngValue = this.location.geometry.location.lng() + 0.3;
+      let lowLatValue = this.location.lat - 0.3;
+      let highLatValue = this.location.lat + 0.3;
+      let lowLngValue = this.location.lng - 0.3;
+      let highLngValue = this.location.lng + 0.3;
       let availableItems = this.Items.availableStores.filter( (key) => {
           if(key.lat > lowLatValue && key.lat < highLatValue && key.lng > lowLngValue && key.lng < highLngValue) {
             return key;
@@ -42,6 +43,13 @@ export class DataService {
     })
   }
 
+  setFormattedAddress(address) {
+    this.formatted_address = address;
+  }
+
+  getFormattedAddress() {
+    return this.formatted_address
+  }
   // setItem(item) {
   //   console.log(item);
   // }

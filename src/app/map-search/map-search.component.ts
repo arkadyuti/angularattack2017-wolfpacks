@@ -10,12 +10,12 @@ import { DataService } from '../data.service';
 export class MapSearchComponent implements OnInit {
   searchField: string;
   constructor(private dataService: DataService) {
-  	let cordinates = this.dataService.getLocation();
-  	this.searchField = cordinates.formatted_address;
+  	let address = this.dataService.getFormattedAddress();
+  	this.searchField = address;
   }
 
   ngOnInit() {
-  	
+
   }
 
 }

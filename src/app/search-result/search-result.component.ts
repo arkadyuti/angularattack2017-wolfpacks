@@ -15,6 +15,13 @@ export class SearchResultComponent implements OnInit {
     this.getListOfStores({lat:20});
   }
 
+  changeCenterLocation(object) {
+    this.dataService.setLocation({
+      lat:object.lat,
+      lng:object.lng
+    });
+    this.getListOfStores(object);
+  }
   getListOfStores(object) {
     this.dataService.fetchData().subscribe( (isData) => {
       if(isData) {

@@ -4,7 +4,7 @@
 		<div class="col-md-8">
 				<div class="card card-plain">
 				 <app-map-search></app-map-search>
-				 <app-map [listOfStores]="listOfStores" (centerChange)="getListOfStores($event)"></app-map>
+				 <app-map [listOfStores]="listOfStores" (centerChange)="changeCenterLocation($event)"></app-map>
 			</div>
 		</div>
 		<div class="col-md-4">
