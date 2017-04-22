@@ -42,7 +42,57 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 .supplier-details-wrapper .order-item-heading{
     font-size: 17px;
 }
+.order-item .item-right-increment{
+    /*height: 26px;*/
+    border: 1px solid green;
+    padding: 0px 3px 0px 3px;
+    /*font-weight: bold;*/
+    border-radius: 6px;
+    color: green;
+    /*margin: 19px 19px 0 0;*/
+    margin: 19px 19px 0 0;
 
+}
+
+.order-item .item-right-increment .button {
+    /* padding-right: 6px!important; */
+    /* padding-left: 6px!important; */
+    background: #fff!important;
+    width: 18px;
+    padding: 5px;
+
+    /* color: #099E44!important; */
+    /* box-shadow: 0 0 0 1px #099E44!important; */
+    border: none;
+    /* float: left; */
+    cursor: pointer;
+    outline: none;
+    line-height: 14px;
+    /* height: 25px; */
+    /* font-size: 22px; */
+    display: inline-block;
+    /* text-align: left; */
+    /* padding-left: .75em; */
+    /* border-radius: 0 .28571429rem .28571429rem 0; */
+}
+.order-item .item-right-increment input {
+    position: relative;
+    width: 30px;
+    margin: 0;
+    background: #099E44;
+    color: #fff;
+    font-size: 14px;
+    height: 27px;
+    border: 1px solid #099E44;
+    /*float: left;*/
+    padding: 0;
+    text-align: center;
+    border-radius: 0;
+}
+.order-item .order-item-container .hiddenValue{
+    /*opacity: 0;*/
+    position: absolute;
+}
 /*Supplier details - END*/
 /*Sidebar - START*/
 .sidebar, .main-panel {

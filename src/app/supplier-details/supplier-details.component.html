@@ -16,7 +16,8 @@
 	    				<div>Tanker Water</div>
 	    				<div>&#8377; 16</div>
 	    			</div>
-	    			<div class="item-right pull-right" (click)="somefun()">Select</div>
+	    			<input type="checkbox" class="hiddenValue" (click)="brands($event)" name="slectCheckbox" id="slectCheckbox" >
+	    			<label for="slectCheckbox" class="item-right pull-right">Select</label>
 	    		</div>
 	    	</div>
 	    	<div class="order-item">
@@ -26,14 +27,24 @@
 	    				<div>Bisleri</div>
 	    				<div>&#8377; 16</div>
 	    			</div>
-	    			<div class="item-right pull-right">Add</div>
+	    			<input type="text" class="hiddenValue" (click)="brandss($event)" name="itemQuantityBisleri" [value]= "name1 " id="itemQuantityBisleri" >
+	    			<label for="itemQuantityKinley" class="item-right-increment pull-right">
+	    				<span class="ui left attached button dec" (click)="changeValue($event)"> – </span>
+	    				<input type="text" class="inc-dec" [(ngModel)]="name1" readonly="" >
+	    				<span class="ui right attached button inc" (click)="changeValue($event)"> + </span>
+	    			</label>
 	    		</div>
 	    		<div class="order-item-container">
 	    			<div class="item-left pull-left">
 	    				<div>Kinley</div>
 	    				<div>&#8377; 16</div>
 	    			</div>
-	    			<div class="item-right pull-right">Add</div>
+	    			<input type="text" class="hiddenValue" (click)="brandss($event)" name="itemQuantityKinley" [value]= "name1 " id="itemQuantityKinley" >
+	    			<label for="itemQuantityKinley" class="item-right-increment pull-right">
+	    				<span class="ui left attached button dec" (click)="changeValue($event)"> – </span>
+	    				<input type="text" class="inc-dec" [(ngModel)]="name1" readonly="" >
+	    				<span class="ui right attached button inc" (click)="changeValue($event)"> + </span>
+	    			</label>
 	    		</div>
 	    	</div>
 	    </div>

@@ -37,4 +37,7 @@ export class DataService {
     })
   }
 
+  // setItem(item) {
+  //   console.log(item);
+  // }
 }
