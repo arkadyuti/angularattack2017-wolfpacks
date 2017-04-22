@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./increment-list.component.css']
 })
 export class IncrementListComponent implements OnInit {
-	@Input() abcd;
-
+	@Input() brand;
+  @Input() index;
 	constructor() { }
 	public name1 = "0";
 
@@ -17,7 +17,7 @@ export class IncrementListComponent implements OnInit {
 		console.log(e.target.value)
 	}
   	changeValue(e){
-  		console.log(this.abcd)
+  		console.log(this.brand)
         // debugger
         let val = e.target.parentElement.children[1].value;
         

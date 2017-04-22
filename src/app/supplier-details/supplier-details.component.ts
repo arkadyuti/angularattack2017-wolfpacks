@@ -12,16 +12,13 @@ export class SupplierDetailsComponent implements OnInit {
 
     public abc = {};
     public arr = [];
-    public arr1 = ["Bisleri", "Kinley", "Aqua", "Nestle"]
+    public listOfBrands = ["Bisleri", "Kinley", "Aqua", "Nestle"]
+    public listOfItemsType = ["Tanker Water", "Can Water"]
 
     ngOnInit() {
     }
 
 
-    availableItems(e, value){
-        this.arr.push(value);
-        this.abc['brands'] = this.arr;
-        console.log(this.abc)
-    }
+    
     
 }

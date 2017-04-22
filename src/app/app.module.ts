@@ -23,6 +23,7 @@ import { DataService } from './data.service';
 import { MapSearchComponent } from './map-search/map-search.component';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 import { IncrementListComponent } from './increment-list/increment-list.component';
+import { CartItemTypeComponent } from './cart-item-type/cart-item-type.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { IncrementListComponent } from './increment-list/increment-list.componen
     SearchResultComponent,
     MapSearchComponent,
     SupplierDetailsComponent,
-    IncrementListComponent
+    IncrementListComponent,
+    CartItemTypeComponent
   ],
   imports: [
     BrowserModule,
