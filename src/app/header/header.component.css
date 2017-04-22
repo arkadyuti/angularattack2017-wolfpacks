@@ -1,0 +1,47 @@
+/*Header - START*/
+.navbar .notification{
+	position: absolute;
+    top: 5px;
+    border: 1px solid #FFF;
+    right: 10px;
+    font-size: 9px;
+    background: #f44336;
+    color: #FFFFFF;
+    min-width: 20px;
+    padding: 0px 5px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 19px;
+    vertical-align: middle;
+    display: block;
+}
+.right-header a{
+	color:#555555;
+}
+.logo{
+	padding: 15px 15px;
+}
+.simple-text{
+	text-transform: uppercase;
+    padding: 5px 0px;
+    display: block;
+    font-size: 18px;
+    color: #3C4858;
+    text-align: left;
+    font-weight: 400;
+    line-height: 30px;
+}
+.logo-img{
+	width: 30px;
+    display: inline-block;
+    max-height: 30px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+.logo-img img{
+    width: 35px;
+    top: 16px;
+    position: absolute;
+}
+/*Header - END*/
