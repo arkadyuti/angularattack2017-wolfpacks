@@ -12,7 +12,7 @@ import 'rxjs/Rx';
 export class MapComponent {
   @Input() listOfStores;
   title: string = 'Map';
-  zoom: number = 8;
+  zoom: number = 12;
 
   // initial center position for the map
   lat: number;

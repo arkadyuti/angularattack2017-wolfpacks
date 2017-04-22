@@ -16,8 +16,13 @@ export class SearchResultComponent implements OnInit {
   }
 
   getListOfStores() {
-    this.dataService.getItems().then( (res) => {
-      this.listOfStores = res;
-    });
+    this.dataService.fetchData().subscribe( (isData) => {
+      if(isData) {
+        this.dataService.getItems().then( (res) => {
+          this.listOfStores = res;
+        });
+      }
+    })
+    
    }
   }

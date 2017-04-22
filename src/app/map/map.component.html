@@ -1,6 +1,6 @@
 <div class="card-content">
   <div class="content-wrapper">
-    <sebm-google-map [latitude]="lat" [longitude]="lng">
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
       	<sebm-google-map-marker *ngFor="let mark of listOfStores; let i = index" [latitude]="mark.lat" [longitude]="mark.lng" [label]="mark.label">
       		<sebm-google-map-info-window>
       			<strong>{{mark.title}}</strong>

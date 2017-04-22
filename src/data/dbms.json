@@ -136,5 +136,20 @@
 		"contactName": "Raju",
 		"city": "Bangalore",
 		"address": "601, Krishvi Prospero, 1st Main C Block, AECS Layout, BrookeFields, AECS Layout - C Block, AECS Layout, Brookefield, Bengaluru, Karnataka 560037"
+	}, {
+		"id": "store4",
+		"lat": 16.9723502,
+		"lng": 18.6971736,
+		"label": "B",
+		"draggable": false,
+		"company": "PQR Water Supply",
+		"prefferedDeliveryTime": ["7:30AM", "10:30PM"],
+		"availableItems": ["Tanker Water", "Can Water"],
+		"brands": ["Bisleri", "Fiji Water", "Pepsi Co."],
+		"officialEmail": "test@test.com",
+		"contactPhone": ["9988998899", "9639639636"],
+		"contactName": "Muru",
+		"city": "Bangalore",
+		"address": "No.14, 1st Floor, Near Alpine Eco Apartments, Dodda Nekkundi, Dodda Nekkundi Extension, Doddanekkundi, Bengaluru, Karnataka 560037"
 	}]
 }

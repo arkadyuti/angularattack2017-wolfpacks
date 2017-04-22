@@ -10,7 +10,6 @@ import { DataService } from '../data.service';
 export class MapSearchComponent implements OnInit {
   searchField: string;
   constructor(private dataService: DataService) {
-	  debugger;
   	let cordinates = this.dataService.getLocation();
   	this.searchField = cordinates.formatted_address;
   }
