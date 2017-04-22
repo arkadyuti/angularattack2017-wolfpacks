@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 
 export const router: Routes = [
-	{ path:'', redirectTo: 'home', pathMatch: 'full'},
+	{ path:'', redirectTo: 'search-result', pathMatch: 'full'},
 	{ path:'home', component: HomeComponent},
 	{ path:'search-result', component: SearchResultComponent},
 	{ path:'login', component: LoginComponent},

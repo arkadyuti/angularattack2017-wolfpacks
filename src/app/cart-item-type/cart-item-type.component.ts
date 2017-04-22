@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cart-item-type',
@@ -6,10 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cart-item-type.component.css']
 })
 export class CartItemTypeComponent implements OnInit {
+	
+	public isChecked = false;
+	public cartItemTypes = {};
+	
 	@Input() itemType;
 	@Input() index;
-
-	public isChecked = false;
+	@Output() targetItemType = new EventEmitter();
+	
 	constructor() { }
 
 	ngOnInit() {
@@ -18,5 +22,8 @@ export class CartItemTypeComponent implements OnInit {
         console.log(e.target.checked)
         this.isChecked = e.target.checked;
         console.log(this.index)
+
+        this.cartItemTypes[this.itemType] = this.isChecked;
+        this.targetItemType.emit(this.cartItemTypes);
     }
 }

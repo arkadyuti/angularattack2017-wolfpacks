@@ -12,7 +12,7 @@
 	    	<div class="order-item">
 	    		<div class="order-item-heading">Available item type</div>
 	    		<div class="order-item-container" *ngFor="let item of listOfItemsType;let i=index">
-	    			<app-cart-item-type [itemType] = "item" [index] = "i"></app-cart-item-type>
+	    			<app-cart-item-type [itemType] = "item" [index] = "i" (targetItemType)="handleTargetItemType($event)"></app-cart-item-type>
 	    		</div>
 	    	</div>
 	    	<div class="order-item">
