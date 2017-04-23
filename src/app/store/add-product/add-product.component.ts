@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-each-shop',
+  selector: 'app-product-component',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
 })

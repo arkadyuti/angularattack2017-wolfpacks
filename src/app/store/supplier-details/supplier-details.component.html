@@ -19,7 +19,7 @@
 	    	<div class="order-item">
 	    		<div class="order-item-heading">Available Brands</div>
 	    		<div *ngFor="let brand of listOfBrands; let i=index" class="order-item-container">
-	    			<app-increment-list [brand]="brand" [index] = "i" (targetBrand)="handleTargetBrand($event)"></app-increment-list>
+	    			<app-increment-list [brand]="brand" [index] = "i" (targetBrand)="handleTargetBrand($event)" [shopName]="shopData.company"></app-increment-list>
 	    		</div>
 	    	</div>
 	    </div>
