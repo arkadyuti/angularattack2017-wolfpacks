@@ -24,6 +24,7 @@ export class SearchResultComponent implements OnInit {
     this.getListOfStores(object);
   }
   getListOfStores(object) {
+
     this.dataService.fetchData().subscribe( (isData) => {
       if(isData) {
         this.dataService.getItems().then( (res) => {

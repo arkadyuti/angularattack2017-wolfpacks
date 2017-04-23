@@ -21,12 +21,20 @@ export class DataService {
   }
 
   setLocation(obj) {
-    this.location = obj;
+      sessionStorage.setItem('mapLocation', JSON.stringify(obj));
+      this.location = obj;
   }
 
-  getLocation() {
-    return this.location;
-  }
+    getLocation() {
+        let mapLocation = JSON.parse(sessionStorage['mapLocation']);
+        if(mapLocation){
+            this.location = mapLocation;
+            return mapLocation
+        }
+        else{
+            return this.location;
+        }
+    }
 
   getItems(): any {
     return new Promise( (resolve, reject) => {
