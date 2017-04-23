@@ -72,6 +72,7 @@ const firebaseConfig = {
     SignUpComponent,
     userProfileComponent,
     CartPopupComponent,
+    AddProductComponent,
     EachShopComponent
   ],
   imports: [
