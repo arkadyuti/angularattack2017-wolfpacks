@@ -8,7 +8,10 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 })
 export class ShopComponent implements OnInit {
 
-	shopInputs = {} 
+	shopInputs = {
+		lat: "",
+		lng: ""
+	} 
 	uId : any;
 
 	constructor(private af: AngularFire, private router: Router){
@@ -29,6 +32,7 @@ export class ShopComponent implements OnInit {
 	handleAddShopClick(e){
 		this.postAddShopDataFire("shops", this.uId, this.shopInputs)
 	}
+
 	postAddShopDataFire(url, key, obj){
         const itemObservable = this.af.database.object(url+'/'+key);
         itemObservable.set(obj).catch((e)=> console.error(e.message) );
