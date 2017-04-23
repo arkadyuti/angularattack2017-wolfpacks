@@ -23,6 +23,7 @@ import { MenuComponent } from './store/listProducts/menu.component';
 import { SearchComponent } from './store/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchResultComponent } from './store/search-result/search-result.component';
+import { AddProductComponent }  from './store/add-product/add-product.component';
 
 import { DataService } from './core/data.service';
 import { MapSearchComponent } from './store/map-search/map-search.component';
@@ -69,7 +70,8 @@ const firebaseConfig = {
     LoginComponent,
     SignUpComponent,
     userProfileComponent,
-    CartPopupComponent
+    CartPopupComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
