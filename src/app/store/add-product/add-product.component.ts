@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Component({
   selector: 'app-product-component',
@@ -6,14 +8,30 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-@Input() shop;
-  public productName: string ="";
-  public productquantity: number =0;
-  public productType: string ="";
-  constructor() { }
+	product = {} 
+	uId : any;
 
-  ngOnInit() {
-    console.log("in init")
-  }
+	constructor(private af: AngularFire, private router: Router){
+		var self = this;
+		// af.auth.logout()
+     	af.auth.subscribe(user => {
+     		console.log(user)
+     		this.uId = user.uid;
+            if(!user){
+               self.router.navigate(['/login']);
+            }
+        });
+	}
+
+	ngOnInit() {
+
+	}
+	handleAddProductClick(e){
+		this.postAddProductDataFire("shops", this.uId, this.product)
+	}
+	postAddProductDataFire(url, key, obj){
+        const itemObservable = this.af.database.list(url+'/'+key+'/products');
+        itemObservable.push(obj).catch((e)=> console.error(e.message) );
+    }
 
 }
