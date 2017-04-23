@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../../core/data.service';
 
 @Component({
   selector: 'app-cart-popup',
@@ -10,8 +11,10 @@ export class CartPopupComponent implements OnInit {
 	public alterDisplay = "displayNone";
 	public toggleDisplay = false;
 
+	public products = [];
 
-	constructor() {
+
+	constructor(private dataService: DataService) {
 
 	}
 	ngOnChanges(){
@@ -22,7 +25,17 @@ export class CartPopupComponent implements OnInit {
 		else{
 			this.alterDisplay = "displayNone"
 		}
+
+		this.products = this.dataService.getCartItems();
 		// this.visiblity ? this.alterDisplay = "displayVisible" : "displayNone";
+	}
+
+	getTotal(items) {
+		let sum = 0;
+		items.map( (res) => {
+			sum += (res.price * res.qty);
+		})
+		return sum;
 	}
 	handlePopup(){
 		this.alterDisplay = "displayNone"
@@ -30,8 +43,8 @@ export class CartPopupComponent implements OnInit {
 		this.toggleDisplay = true;
 	}
 	ngOnInit() {
+		this.products = this.dataService.getCartItems();
 		// this.toggleDisplay = this.visiblity
 	}
-  
-
+  	
 }

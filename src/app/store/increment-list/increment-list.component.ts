@@ -12,6 +12,7 @@ export class IncrementListComponent implements OnInit {
 
 	@Input() brand;
     @Input() index;
+    @Input() shopName;
 
     @Output() targetBrand = new EventEmitter();
 
@@ -42,6 +43,8 @@ export class IncrementListComponent implements OnInit {
             val--
             this.name1=  val;
         }
+
+        this.brand['shopName'] = this.shopName;
         this.brand['qty'] = this.name1;
         this.dataService.addToCart(this.brand);
     }
