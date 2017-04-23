@@ -21,7 +21,7 @@ export const router: Routes = [
 	{ path: 'userprofile', component: userProfileComponent },
 	{ path: 'search-result/cart-page', component: CartPageComponent },
 	{ path: 'addproduct', component: AddProductComponent },
-	{ path: 'addshop', component: ShopComponent }
+	{ path: 'search-result/addshop', component: ShopComponent }
 
 ]
 

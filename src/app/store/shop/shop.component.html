@@ -1,67 +1,46 @@
 <app-header></app-header>
-<div  class="card-content">
-  <div  class="content-wrapper">
-  <form>
-    <div class="col-md-8 ">
-        <label>
+<div class="container-fluid">
+    <div class="card-content">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 addshop-container">
+                <!-- <form> -->
+                    <div class="form-group">
+                        <label>Shop Name</label>
+                        <input type="text" [(ngModel)]="shopInputs.shopName" class="form-control" id="shopName" placeholder="Shop Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Land Mark</label>
+                        <input type="text" [(ngModel)]="shopInputs.landMark" class="form-control" id="landMark" placeholder="Land Mark">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" [(ngModel)]="shopInputs.city" class="form-control" id="city" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP code</label>
+                        <input type="text" [(ngModel)]="shopInputs.zip" class="form-control" id="zip" placeholder="ZIP">
+                    </div>
+                    <button type="submit" (click)="handleAddShopClick($event)" class="btn btn-default">Submit</button>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+<form>
+    <!-- <label>
             <select>
-              <option>Choose your stores</option>
-              <option> Kaveri Jal</option>
-              <option> Tunga Waters </option>
-              <option> Himalaya Pure water</option>
+                <option>Choose your stores</option>
+                <option> Kaveri Jal</option>
+                <option> Tunga Waters </option>
+                <option> Himalaya Pure water</option>
             </select>
         </label>
-    </div>
-    <div class="col-md-8 ">
-      <label>Shope Name
-        <input type="text" placeholder="Product Name" id="productName" 
-            [(ngModel)]="productName" name="productName" required >
-        <div [hidden]="productName.valid || pwd1.pristine" class="alert callout">
-          Product name is Required
-        </div>
-      </label>
-    </div>
     
     <div class="col-md-8 ">
-    <label>landmark
-        <input type="text" placeholder="Product Name" id="productName" 
-            [(ngModel)]="shopLandmark" name="productName" required >
-        <div [hidden]="shopLandmark.valid || pwd1.pristine" class="alert callout">
-          
+        <div class="expanded button-group">
+            <a class="success button" (click)="addProduct()">Add Shop</a>
+            <a class="cancel button" (click)="cancel()">Cancel</a>
         </div>
-      </label>
     </div>
-
-    <div class="col-md-8 ">
-    <label>city
-        <input type="text" placeholder="Product Name" id="productName" 
-            [(ngModel)]="shopCity" name="shopCity" required >
-        <div [hidden]="shopCity.valid || pwd1.pristine" class="alert callout">
-          Product Type is Required
-        </div>
-      </label>
-    </div>
-
-    <div class="col-md-8 ">
-    <label>ZIP
-        <input type="text" placeholder="Product Name" id="productName" 
-            [(ngModel)]="shopZip" name="productName" required >
-        <div [hidden]="shopZip.valid || pwd1.pristine" class="alert callout">
-          Product Type is Required
-        </div>
-      </label>
-    </div>
-    
-    <div class="col-md-8 ">
-      <div class="expanded button-group">
-        <a class="success button" (click)="addProduct()">Add Shop</a>
-        <a class="cancel button" (click)="cancel()">Cancel</a>
-      </div>
-    </div>    
-</form>
-
-  
-  </div>
-  </div>
-
-
+</form> -->
