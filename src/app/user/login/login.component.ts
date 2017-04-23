@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import * as firebase from 'firebase';
-import {UserService} from '../userShared/user.service';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 
 @Component({
@@ -10,34 +9,36 @@ import {UserService} from '../userShared/user.service';
  })
  
 export class LoginComponent { 
-  email: string;
-  password1: string;
-  
-  constructor(private userSVC: UserService, private router: Router){
-      var user = firebase.auth().currentUser;
-      var self = this;
-       firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            self.router.navigate(['/userprofile']);
-          } else {
-             alert(' No user is signed in');
-          }
+
+  email: any;
+  password1: any;
+  authenticated: boolean;
+
+  constructor(private af: AngularFire, private router: Router){
+    var self = this;
+     af.auth.subscribe(user => {
+            if(user){
+               self.router.navigate(['/userprofile']);
+            }
         });
   }
-
+   
   userProfile(){
     this.router.navigate(['/userprofile']);
   }
 
-  login(){
-    this.userSVC.login(this.email, this.password1);
-    this.userSVC.verifyUser();
+  public login() {
+     this.af.auth.login({ email: this.email, password: this.password1}).then((res) => 
+     {
+        if (res.provider === 4)
+        this.authenticated = true;
+      });
+
   }
 
   signup(){
     
-  this.userSVC.verifyUser();
-  }
+ }
 
   cancel(){
     this.router.navigate(['']);
