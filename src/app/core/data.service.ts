@@ -19,7 +19,7 @@ export class DataService {
           console.log(snapshot.val())
         });
 
-      return this.http.get('./data/dbms.json').map( (res) => {
+      return this.http.get('http://www.mocky.io/v2/58fd34c10f0000ee0008b826').map( (res) => {
           this.Items = res.json();
           return true;
     })
