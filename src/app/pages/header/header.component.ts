@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { DataService } from '../../core/data.service';
 
 @Component({
@@ -6,12 +6,20 @@ import { DataService } from '../../core/data.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements DoCheck {
 	public cartList: any = [];
+	public count: number;
   constructor(private dataService: DataService) { }
 
-  ngOnInit() {
-  	this.cartList = this.dataService.getCartItems();
+  ngDoCheck() {
+  	// this.cartList = this.dataService.getCartItems();
+
+  	this.count = this.dataService.getTotalCartItems();
+
+ //  	if(this.cartList.length > 0) {
+	//   	this.count = this.cartList.reduce( (a, b) => a.qty + b.qty);
+	// }
+
   }
 
 }

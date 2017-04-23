@@ -52,15 +52,39 @@ export class DataService {
   }
 
   addToCart(item) {
-    this.Cart.push(item);
+    if(item.qty != 0) {
+      if(this.Cart.length > 0) {
+        this.Cart.map( (res, i) => {
+          if(res.name === item.name) {
+            this.Cart[i] = item;
+          } else {
+            this.Cart.push(item);
+          }
+        })
+
+      } else {
+        this.Cart.push(item);
+      }
+    } else {
+      this.Cart = this.Cart.filter( (res) => {
+        return res.name != item.name;
+      })
+    }
+    
   }
 
   getCartItems() {
     return this.Cart;
   }
-  // setItem(item) {
-  //   console.log(item);
-  // }
+
+  getTotalCartItems() {
+    let count = 0;
+    for(var key in this.Cart) {
+      count += +this.Cart[key]['qty'];
+    }
+    return count;
+  }
+
 }
 // interface Options {
 //   id: string,
