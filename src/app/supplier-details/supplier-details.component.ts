@@ -10,7 +10,7 @@ export class SupplierDetailsComponent implements OnInit {
     @Input() listOfStores;
     @Input() shopData ;
 
-    @Output() 
+    @Output()
     backToList = new EventEmitter();
 
     public listOfBrands = [];
@@ -21,7 +21,7 @@ export class SupplierDetailsComponent implements OnInit {
     public allCart = {};
     public noItem: boolean = false;
 
-    constructor() { }
+    constructor(private dataService: DataService,) { }
 
     handleTargetBrand(brand) {
         this.brandListCart[Object.keys(brand)[0]] = brand[Object.keys(brand)[0]]

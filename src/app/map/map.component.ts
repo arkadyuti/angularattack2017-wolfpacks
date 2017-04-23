@@ -24,6 +24,7 @@ export class MapComponent {
   onChange(event) {
     this.centerChange.emit(event);
   }
+
   ngOnInit() {
   	let cordinates = this.dataService.getLocation();
   	this.lat = cordinates.lat;
