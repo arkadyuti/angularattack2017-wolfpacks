@@ -5,7 +5,6 @@ import { Pipe } from '@angular/core';
 })
 export class DatePipe {
   transform(deliveryTime) {
-    console.log("hey");
     const date = new Date();
     const hours = date.getHours();
     const minutes = date.getMinutes();

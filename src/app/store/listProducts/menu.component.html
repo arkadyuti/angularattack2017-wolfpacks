@@ -18,12 +18,9 @@
 	                </a>
 	            </li>
 	            <li *ngFor="let shop of listOfStores">
-	            	<span (click)="showItems($event, shop)">
-	                    <i class="material-icons">opacity</i>
-	                    <p>{{shop.company}}</p>
-	                </span>
+	            	<app-each-shop [shop]="shop" (click)="showItems($event, shop)"></app-each-shop>
 	            </li>
-	            
+
 	        </ul>
 
 		    <div class="moving-tab" *ngIf="listOfStores.length > 0" style="width: 310px; transform: translate3d(0px, 20px, 0px); transition: all 0.5s cubicBezier(0.29, 1.42, 0.79, 1);">
