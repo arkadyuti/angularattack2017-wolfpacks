@@ -12,6 +12,13 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 .pointer{
     cursor: pointer;
 }
+/*Addshop -START*/
+.addshop-container{
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 35px 100px 35px;
+}
+/*Addshop -START*/
 /*Cart Popup - STAR*/
 .modal-content .modal-header i {
     color:#000;
