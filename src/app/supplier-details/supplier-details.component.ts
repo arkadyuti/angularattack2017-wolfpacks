@@ -7,8 +7,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./supplier-details.component.css']
 })
 export class SupplierDetailsComponent implements OnInit {
-    @Input() listOfStores;
-    @Input() shopData;
+    @Input() listOfStores  = {};
+    @Input() shopData  = {};
 
     @Output() 
     backToList = new EventEmitter();
@@ -21,7 +21,7 @@ export class SupplierDetailsComponent implements OnInit {
     public allCart = {};
     public noItem: boolean = false;
 
-    constructor(public dataService: DataService) { }
+    constructor() { }
 
     handleTargetBrand(brand) {
         this.brandListCart[Object.keys(brand)[0]] = brand[Object.keys(brand)[0]]
