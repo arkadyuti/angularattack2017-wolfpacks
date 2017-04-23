@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/observable';
-import { Observer } from 'rxjs/Observer';
-// import 'rxjs/Rx';
+import { AngularFire } from 'angularfire2';
 
 @Injectable()
 export class DataService {
@@ -10,14 +8,20 @@ export class DataService {
   formatted_address: string;
   Items: any = [];
   Cart: any = [];
-  constructor(private http : Http) {
+  constructor(private http : Http, private af: AngularFire) {
 
   }
 
   fetchData() {
-    return this.http.get('./data/dbms.json').map( (res) => {
-        this.Items = res.json();
-        return true;
+      let data = this.af.database.object('/shops', { preserveSnapshot: true });
+      data.subscribe(snapshot => {
+          console.log(snapshot.key)
+          console.log(snapshot.val())
+        });
+
+      return this.http.get('./data/dbms.json').map( (res) => {
+          this.Items = res.json();
+          return true;
     })
   }
 
@@ -90,7 +94,7 @@ export class DataService {
         return res.name != item.name;
       })
     }
-    
+
   }
 
   getCartItems() {
@@ -106,19 +110,3 @@ export class DataService {
   }
 
 }
-// interface Options {
-//   id: string,
-//   lat: number,
-//   lng: number,
-//   label: string,
-//   draggable: boolean,
-//   company: string,
-//   prefferedDeliveryTime: Array<string>,
-//   availableItems: Array<string>,
-//   brands: Array<string>,
-//   officialEmail: string,
-//   contactPhone: Array<string>,
-//   contactName: string,
-//   city: string,
-//   address: string
-// }

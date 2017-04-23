@@ -38,12 +38,12 @@ export class SearchResultComponent implements OnInit {
 
    details(shop) {
      if(shop) {
-       this.isSearchPage = !this.isSearchPage;
+       this.isSearchPage = false;
        this.shopDetails = shop;
      }
    }
 
    handleBack(check) {
-     this.isSearchPage = !this.isSearchPage;
+     this.isSearchPage = true;
    }
   }
