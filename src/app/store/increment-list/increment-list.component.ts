@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DataService } from '../../core/data.service';
 
 @Component({
   selector: 'app-increment-list',
@@ -14,7 +15,9 @@ export class IncrementListComponent implements OnInit {
 
     @Output() targetBrand = new EventEmitter();
 
-	constructor() {
+	constructor(
+        public dataService: DataService
+    ) {
         
     }
 	
@@ -24,6 +27,7 @@ export class IncrementListComponent implements OnInit {
 	incrementalValue(e){
         this.cartBrands[this.brand] = e.target.value;
         this.targetBrand.emit(this.cartBrands);
+        debugger;
 	}
   	changeValue(e){
         let val = e.target.parentElement.children[1].value;
@@ -39,6 +43,8 @@ export class IncrementListComponent implements OnInit {
             val--
             this.name1=  val;
         }
+        this.brand['qty'] = this.name1;
+        this.dataService.addToCart(this.brand);
     }
 
 }
