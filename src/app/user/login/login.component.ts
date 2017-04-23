@@ -34,7 +34,7 @@ export class LoginComponent {
   }
 
   signup(){
-    
+    this.router.navigate(['/signup']);
  }
 
   cancel(){
