@@ -18,7 +18,7 @@
 	                </a>
 	            </li>
 	            <li *ngFor="let shop of listOfStores">
-	            	<app-each-shop [shop]="shop" (click)="showItems($event, shop)"></app-each-shop>
+	            	<app-each-shop [shop]="shop" (clickShop)="showItems($event, shop)"></app-each-shop>
 	            </li>
 
 	        </ul>

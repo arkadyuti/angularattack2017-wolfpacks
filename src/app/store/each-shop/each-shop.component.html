@@ -1,11 +1,14 @@
 <span [shopCloseDirective]="shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe" (click)="showStore()">
       <i class="material-icons">opacity</i>
       <p>{{shop.company}}</p>
-      <p *ngIf="shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe">
+      <p class="shop-closed" *ngIf="shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe"    [ngStyle]="{
+    		'color': getColor(shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe),
+    		'margin-left': '45px',
+    		'margin-top': '-10px'
+		}">
         Closed
       </p>
       <p *ngIf="!(shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe)">
         {{this.timeTaken}}
       </p>
-      <button class="" name="button" (click)="this.check()"></button>
   </span>
