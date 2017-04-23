@@ -7,8 +7,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./supplier-details.component.css']
 })
 export class SupplierDetailsComponent implements OnInit {
-    @Input() listOfStores  = {};
-    @Input() shopData  = {};
+    @Input() listOfStores;
+    @Input() shopData ;
 
     @Output() 
     backToList = new EventEmitter();
