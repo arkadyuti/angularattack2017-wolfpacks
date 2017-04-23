@@ -135,12 +135,12 @@
             "Tanker Water"
          ],
          "brands":[
-            "Bisleri",
-            "Fiji Water",
-            "Pepsi Co.",
-            "Kinley",
-            "Aqua",
-            "Nestle"
+            {"name":"Bisleri", "price": 15},
+            {"name":"Fiji Water", "price": 10},
+            {"name":"Pepsi Co.", "price": 10},
+            {"name":"Kinley", "price": 10},
+            {"name":"Aqua", "price": 10},
+            {"name":"Nestle", "price": 10}
          ],
          "officialEmail":"test@test.com",
          "contactPhone":[
@@ -173,9 +173,9 @@
             "Can Water"
          ],
          "brands":[
-            "Bisleri",
-            "Fiji Water",
-            "Pepsi Co."
+            {"name":"Bisleri", "price": 15},
+            {"name":"Fiji Water", "price": 10},
+            {"name":"Pepsi Co.", "price": 10}
          ],
          "officialEmail":"test@test.com",
          "contactPhone":[
@@ -207,10 +207,10 @@
             "Can Water"
          ],
          "brands":[
-            "Bisleri",
-            "Kinley",
-            "Aqua",
-            "Nestle"
+            {"name":"Bisleri", "price": 15},
+            {"name":"Fiji Water", "price": 18},
+            {"name":"Pepsi Co.", "price": 10},
+            {"name":"Kinley", "price": 10}
          ],
          "officialEmail":"test@test.com",
          "contactPhone":[
@@ -243,9 +243,11 @@
             "Can Water"
          ],
          "brands":[
-            "Bisleri",
-            "Fiji Water",
-            "Pepsi Co."
+            {"name":"Bisleri", "price": 15},
+            {"name":"Fiji Water", "price": 10},
+            {"name":"Pepsi Co.", "price": 10},
+            {"name":"Kinley", "price": 10},
+            {"name":"Aqua", "price": 10}
          ],
          "officialEmail":"test@test.com",
          "contactPhone":[

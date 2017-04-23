@@ -12,13 +12,35 @@
             </select>
         </label>
     </div>
-
     <div class="col-md-8 ">
       <label>Product Name
         <input type="text" placeholder="Product Name" id="productName" 
-            [(ngModel)]="productName" name="productName" required #productName="ngModel">
+            [(ngModel)]="productName" name="productName" required >
         <div [hidden]="productName.valid || pwd1.pristine" class="alert callout">
-          Password Name Required
+          Product name is Required
+        </div>
+      </label>
+    </div>
+    <div class="col-md-8 ">
+    <label>Quantity
+       <select [(ngModel)]="productquantity" name="productName" required >
+              <option>1</option>
+              <option>2</option>
+              <option> 3 </option>
+              <option> 4</option>
+        </select>
+        
+        <div [hidden]="productquantity.valid || pwd1.pristine" class="alert callout">
+          Prouduct Quantity Required
+        </div>
+      </label>
+    </div>
+    <div class="col-md-8 ">
+    <label>Type
+        <input type="text" placeholder="Product Name" id="productName" 
+            [(ngModel)]="productType" name="productName" required >
+        <div [hidden]="productType.valid || pwd1.pristine" class="alert callout">
+          Product Type is Required
         </div>
       </label>
     </div>
@@ -32,6 +54,7 @@
     </div>    
 </form>
 
+  
   </div>
   </div>
 
