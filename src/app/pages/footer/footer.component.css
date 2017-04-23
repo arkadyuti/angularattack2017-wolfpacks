@@ -1,0 +1,7 @@
+.foot-note p {
+	font-weight: bold;
+	text-align: center;
+}
+.foot-note p span {
+	font-size: 20px;
+}
