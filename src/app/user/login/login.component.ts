@@ -14,13 +14,10 @@ export class LoginComponent {
   password1: any;
   authenticated: boolean;
 
+
   constructor(private af: AngularFire, private router: Router){
-    var self = this;
-     af.auth.subscribe(user => {
-            if(user){
-               self.router.navigate(['/userprofile']);
-            }
-        });
+
+  
   }
    
   userProfile(){
