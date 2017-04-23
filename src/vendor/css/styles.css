@@ -261,6 +261,9 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 .content-wrapper-sidebar .cartBtn{
     padding: 15px;
 }
+.content-wrapper-sidebar .error{
+    padding-left: 27px;
+}
 /*Supplier details - END*/
 /*Sidebar - START*/
 .sidebar, .main-panel {
@@ -295,6 +298,7 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
     z-index: 4;
     overflow-x: hidden;
 }
+
 .sidebar .nav, .off-canvas-sidebar .nav {
     margin-top: 20px;
 }
@@ -314,13 +318,13 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
     cursor: pointer;
 }
 .sidebar .nav i {
-    font-size: 24px;
+    font-size: 28px;
     float: left;
     margin-right: 15px;
-    line-height: 30px;
+    line-height: 43px;
     width: 30px;
     text-align: center;
-    color: #a9afbb;
+    color: #063c92;
 }
 a .material-icons {
     vertical-align: middle;
@@ -349,6 +353,17 @@ a .material-icons {
 }
 /*Sidebar - END*/
 /*Footer - START*/
+footer .foot-note i {
+    display: block;
+    float: left;
+    clear: both;
+    width: 30px;
+    height: 52px;
+}
+footer .foot-note .close {
+    opacity: 0
+}
+
 footer {
     border-top: 1px solid #e7e7e7;
 }
@@ -375,6 +390,9 @@ footer .copyright {
     padding: 15px 0;
     margin: 0;
 }
+footer .foot-note {
+    line-height: 1.5
+}
 /*Footer - END*/
 /*Main - START*/
 .card {
@@ -388,7 +406,7 @@ footer .copyright {
     background: #fff;
 }
 .card [data-background-color="red"] {
-    background: linear-gradient(60deg, #ef5350, #e53935);
+    background: linear-gradient(60deg, #0f4fb7, #396bbd);
     box-shadow: 0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2);
 }
 .card .card-header {
@@ -420,7 +438,7 @@ footer .copyright {
 }
 .content-wrapper{
     width: 100%;
-    height: 500px;
+    height: 546px;
     border: 0;
     box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
@@ -516,6 +534,12 @@ footer .copyright {
     border-radius: inherit;
     pointer-events: none;
 }
+.navbar-form .form-group{
+    color: #fff;
+}
+.fullWidth{
+    width: 100%;
+}
 /*Main - END*/
 
 /*Side List -START*/
@@ -570,7 +594,7 @@ button.close {
     max-width: 89%;
 }
 .sidebar[data-color="red"] .moving-tab {
-    background-color: #f44336;
+    background-color: #275fba;
     box-shadow: 0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2);
 }
 .moving-tab {

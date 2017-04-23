@@ -26,31 +26,6 @@ export class SupplierDetailsComponent implements OnInit {
     public item : any;
 
     constructor(private af: AngularFire, public dataService: DataService) {
-        let obj = [{
-                "quantity": "5",
-                "brands": [
-                    "Bisleri",
-                    "Fiji Water",
-                    "Pepsi Co."
-                ],
-                "company": "PQR Water Supply",
-                "companyID": "store2",
-                "deliveryTime": "7:30PM",
-                "dateStamp": 1452488445471
-            },
-            {
-                "quantity": "1",
-                "brands": [
-                    "Bisleri"
-                ],
-                "company": "PQR Water Supply",
-                "companyID": "store2",
-                "deliveryTime": "7:30PM",
-                "dateStamp": 1452488455471
-            }
-        ]
-        this.postCartDataFire("/cart", "112233445", obj)
-        // this.getCartDataFire();
     }
     postCartDataFire(url, key, obj){
         const itemObservable = this.af.database.object('/item/'+key);
@@ -80,18 +55,6 @@ export class SupplierDetailsComponent implements OnInit {
     ngOnInit() {
         this.listOfBrands = this.shopData.brands;
         this.listOfItemsType = this.shopData.availableItems;
-    }
-
-    checkBtn(e){
-        if(Object.keys(this.allCart).length > 0) {
-            let CartItems = this.dataService.getCartItems();
-            this.dataService.addToCart(this.allCart);
-        } else {
-            this.noItem = true;
-            setTimeout( () => {
-                this.noItem = false;
-            }, 1000);
-        }
     }
 
     moveToList() {
