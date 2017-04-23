@@ -1,6 +1,9 @@
 div#login-modal .modal-dialog {
     width: 700px;
 }
+div#login-modal .btn-primary {
+	width: 200px;
+}
 .total-section {
 	font-size: 18px;
 }

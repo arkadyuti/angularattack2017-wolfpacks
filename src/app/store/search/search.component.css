@@ -4,3 +4,11 @@
 .search-container input {
 	width: 800px;
 }
+.form-inline .form-group {
+	position: relative;
+}
+.material-icons {
+	position: absolute;
+	top: 5px;
+    right: 5px;
+}

@@ -47,4 +47,13 @@ geoLoc:any = undefined;
     this.clickShop.emit(this.shop)
   }
 
+  getColor(bool) {
+    if(bool){
+      return 'red';
+    } else {
+      return 'blue';
+    }
+
+  }
+
 }

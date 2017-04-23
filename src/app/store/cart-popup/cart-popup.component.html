@@ -15,33 +15,54 @@
                     <!-- Begin # Login Form -->
                     <form id="login-form">
 		                <div class="modal-body">  
-                            <table class="table table-striped">
-                                <thead>
-                                  <tr>
-                                    <th>Shop Name</th>
-                                    <th>Item</th>
-                                    <th>Ouantity</th>
-                                    <th>Price</th>
-                                    <th>Total</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr *ngFor="let item of products">
-                                    <td>{{item.shopName}}</td>
-                                    <td>{{item.name}}</td>
-                                    <td>{{item.qty}}</td>
-                                    <td>&#8377; {{item.price}}</td>
-                                    <td>&#8377; {{item.qty * item.price }}</td>
-                                  </tr>
-                                </tbody>
-                            </table>
+                            <div class="col-xs-8">
+                                <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>Shop Name</th>
+                                        <th>Item</th>
+                                        <th>Ouantity</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let item of products">
+                                        <td>{{item.shopName}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.qty}}</td>
+                                        <td>&#8377; {{item.price}}</td>
+                                        <td>&#8377; {{item.qty * item.price }}</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="clearfix total-section">
+                                    <strong class="pull-left">Total:</strong>
+                                    <strong class="pull-right">&#8377; {{ getTotal(products) }}</strong>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                  <div class="form-group">
+                                    <label class="control-label">Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your Name" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="control-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="Enter Email Address" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="control-label">Mobile number</label>
+                                    <input type="number" class="form-control" placeholder="Enter Mobile Number" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="control-label">Shipping Address</label>
+                                    <textarea class="form-control"></textarea>
+                                  </div>
+                            </div>
         		    	</div>
 				        <div class="modal-footer">
-                            <div class="clearfix total-section">
-                                <strong class="pull-left">Total:</strong>
-                                <strong class="pull-right">&#8377; {{ getTotal(products) }}</strong>
-                            </div>
-                            <div>
+                            
+                            <div class="text-right">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">CHECKOUT</button>
                             </div>
 				        </div>

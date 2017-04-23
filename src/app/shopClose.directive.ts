@@ -4,7 +4,7 @@ import { Directive, HostBinding, HostListener, Input } from '@angular/core';
   selector: '[shopCloseDirective]'
 })
 export class isShopClosedDirective {
-  @HostBinding('class.is-favorite') isClosed = true;
+  @HostBinding('class.shop-closed') isClosed = true;
 
   // @HostBinding('class.is-favorite-hovering') hovering = false;
   //
