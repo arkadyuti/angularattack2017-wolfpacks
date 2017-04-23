@@ -1,1 +1,38 @@
-App works
+<div  class="card-content">
+  <div  class="content-wrapper">
+
+  <form>
+    <div class="col-md-8 ">
+        <label>Username
+            <select>
+              <option>Choose your stores</option>
+              <option> Kaveri Jal</option>
+              <option> Tunga Waters </option>
+              <option> Himalaya Pure water</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="col-md-8 ">
+      <label>Product Name
+        <input type="text" placeholder="Product Name" id="productName" 
+            [(ngModel)]="productName" name="productName" required #productName="ngModel">
+        <div [hidden]="productName.valid || pwd1.pristine" class="alert callout">
+          Password Name Required
+        </div>
+      </label>
+    </div>
+
+    
+    <div class="col-md-8 ">
+      <div class="expanded button-group">
+        <a class="success button" (click)="addProduct()">Add Product</a>
+        <a class="cancel button" (click)="cancel()">Cancel</a>
+      </div>
+    </div>    
+</form>
+
+  </div>
+  </div>
+
+

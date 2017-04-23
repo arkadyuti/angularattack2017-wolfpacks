@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  templateUrl: './add-product.html',
-  styleUrls: ['./add-product.css']
+  selector: 'app-each-shop',
+  templateUrl: './add-product.component.html',
+  styleUrls: ['./add-product.component.css']
 })
+export class AddProductComponent implements OnInit {
+@Input() shop;
+  constructor() { }
 
-export class AddProductComponent {
-  
+  ngOnInit() {
+    console.log("in init")
+  }
 
-  constructor(){}
-
-   
- }
+}
