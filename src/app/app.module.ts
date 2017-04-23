@@ -2,29 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AdminModule }  from './admin/admin.module';
+import { AgmCoreModule, MapsAPILoader } from 'angular2-google-maps/core';
 
 //Router
 import { routes } from './app.router';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { MapComponent } from './map/map.component';
-// import { NavComponent } from './shared/navbar.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { MapComponent } from './store/map/map.component';
+import { LoginComponent } from './user/login/login.component';
+import { SignUpComponent }    from './user/signUp/sign-up.component';
+import { userProfileComponent }    from './user/userProfile/userprofile.component';
+import { UserService } from './user/userShared/user.service';
+
 
 
 //Maps
-import { AgmCoreModule, MapsAPILoader } from 'angular2-google-maps/core';
-import { MenuComponent } from './menu/menu.component';
-import { SearchComponent } from './search/search.component';
-import { HomeComponent } from './home/home.component';
-import { SearchResultComponent } from './search-result/search-result.component';
+import { MenuComponent } from './store/listProducts/menu.component';
+import { SearchComponent } from './store/search/search.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SearchResultComponent } from './store/search-result/search-result.component';
 
-import { DataService } from './data.service';
-import { MapSearchComponent } from './map-search/map-search.component';
-import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
-import { IncrementListComponent } from './increment-list/increment-list.component';
-import { CartItemTypeComponent } from './cart-item-type/cart-item-type.component';
-import { FooterComponent } from './footer/footer.component';
+import { DataService } from './core/data.service';
+import { MapSearchComponent } from './store/map-search/map-search.component';
+import { SupplierDetailsComponent } from './store/supplier-details/supplier-details.component';
+import { IncrementListComponent } from './store/increment-list/increment-list.component';
+import { CartItemTypeComponent } from './store/cart-item-type/cart-item-type.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { CartPageComponent } from './store/cart-page/cart-page.component';
+import { CartPopupComponent } from './store/cart-popup/cart-popup.component';
 import { DatePipe } from './date.pipe';
 import { CustomCheckForClosedPipe } from './customCheckForClosedPipe';
  import { isShopClosedDirective } from './shopClose.directive'
@@ -47,12 +52,16 @@ import { CustomCheckForClosedPipe } from './customCheckForClosedPipe';
     DatePipe,
     CustomCheckForClosedPipe,
     isShopClosedDirective
+    CartPageComponent,
+    LoginComponent,
+    SignUpComponent,
+    userProfileComponent,
+    CartPopupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AdminModule,
     AgmCoreModule.forRoot(),
     ReactiveFormsModule,
     routes,
@@ -61,7 +70,7 @@ import { CustomCheckForClosedPipe } from './customCheckForClosedPipe';
       libraries: ["places"]
     })
   ],
-  providers: [DataService],
+  providers: [DataService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
