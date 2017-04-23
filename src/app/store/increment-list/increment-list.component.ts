@@ -27,7 +27,6 @@ export class IncrementListComponent implements OnInit {
 	incrementalValue(e){
         this.cartBrands[this.brand] = e.target.value;
         this.targetBrand.emit(this.cartBrands);
-        debugger;
 	}
   	changeValue(e){
         let val = e.target.parentElement.children[1].value;
