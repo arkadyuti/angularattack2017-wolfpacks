@@ -1,0 +1,155 @@
+{
+	"userProfile": [{
+		"id": "1",
+		"personName": "Avinash",
+		"personEmail": "avi@quid.com",
+		"personId": "11223344556677",
+		"dateStamp": 1452488445471,
+		"address": {
+			"aptName": "KGS",
+			"street": "1st Cross Road",
+			"locality": "Mahadevapura",
+			"landmark": "Naina Bakery",
+			"city": "Blr",
+			"ZIP": "560016"
+		},
+		"personPhoto": "https://scontent.fblr1-2.fna.fbcdn.net/v/t1.0-9/12247035_1254976961194542_6531272382780209589_n.jpg?oh=38abf72fbfae28e008df645c019f24cc&oe=594FB66C"
+	}, {
+		"id": "2",
+		"personName": "Murugesh",
+		"personEmail": "quid@avi.com",
+		"personId": "77665544332211",
+		"dateStamp": 1452488445471,
+		"address": {
+			"aptName": "KGS",
+			"street": "1st Cross Road",
+			"locality": "Mahadevapura",
+			"landmark": "Naina Bakery",
+			"city": "Blr",
+			"ZIP": "560016"
+		},
+		"personPhoto": "https://scontent.fblr1-2.fna.fbcdn.net/v/t1.0-9/313191_10150390736882685_1037994710_n.jpg?oh=5876259883f9672277418748ec29a189&oe=598E4D2E"
+	}],
+	"orderHistory": {
+		"11223344556677": [{
+			"quantity": "5",
+			"brands": ["Bisleri", "Fiji Water", "Pepsi Co."],
+			"company": "PQR Water Supply",
+			"companyID": "store2",
+			"deliveryTime": "7:30PM",
+			"dateStamp": 1452488445471
+		}, {
+			"quantity": "1",
+			"brands": ["Bisleri"],
+			"company": "PQR Water Supply",
+			"companyID": "store2",
+			"deliveryTime": "7:30PM",
+			"dateStamp": 1452488455471
+		}],
+		"77665544332211": [{
+			"quantity": "2",
+			"brands": ["Bisleri", "Pepsi Co."],
+			"company": "PQR Water Supply",
+			"companyID": "store2",
+			"deliveryTime": "7:30PM",
+			"dateStamp": 1452488445471
+		}]
+	},
+	"cart": {
+		"11223344556677": [{
+			"brand": "Pepsi Co.",
+			"companyID": "store1",
+			"quantity": 3,
+			"itemType": "Tanker Water",
+			"company": "ABC Water Supply"
+		}, {
+			"brand": "Bisleri",
+			"companyID": "store2",
+			"quantity": 1,
+			"itemType": "Can Water",
+			"company": "PQR Water Supply"
+		}, {
+			"brand": "Kinley",
+			"companyID": "store3",
+			"quantity": 3,
+			"itemType": "Can Water",
+			"company": "XYZ Water Supply"
+		}]
+	},
+	"orderDetails": {
+		"store2": [{
+			"id": "orderDetails001",
+			"deliveryTime": "7:30PM",
+			"deliveryAddress": "Krishnageet Shelters, A Wing 16th E Cross, 1st Main Rd Udayanagar Extension, Mahadevapura",
+			"brand": "Bisleri",
+			"quantity": 1,
+			"itemType": "Can Water",
+			"company": "PQR Water Supply",
+			"processing": false,
+			"dispatch": false,
+			"delivered": true
+		}]
+	},
+	
+	"availableStores": [{
+		"id": "store1",
+		"lat": 12.97434,
+		"lng": 77.6951653,
+		"label": "A",
+		"draggable": false,
+		"company": "ABC Water Supply",
+		"prefferedDeliveryTime": ["7:30AM", "10:30PM"],
+		"availableItems": ["Tanker Water"],
+		"brands": [{"name":"Bisleri", "price": 10}, {"name":"Fiji Water", "price": 20}, {"name":"Pepsi Co.", "price": 15}, {"name":"Kinley", "price": 16}, {"name":"Aqua", "price": 30}],
+		"officialEmail": "test@test.com",
+		"contactPhone": ["9988998899", "9639639636"],
+		"contactName": "Avinash",
+		"city": "Bangalore",
+		"address": "Sy No. 9/1, 1st Floor, VRR Orchid, Above Surya Nissan Showroom,, Doddanekkundi, Brindavan Extension, Doddanekundi, Mahadevapura, Bengaluru, Karnataka 560037"
+	}, {
+		"id": "store2",
+		"lat": 12.9723502,
+		"lng": 77.6971736,
+		"label": "B",
+		"draggable": false,
+		"company": "PQR Water Supply",
+		"prefferedDeliveryTime": ["7:30AM", "10:30PM"],
+		"availableItems": ["Tanker Water", "Can Water"],
+		"brands": [{"name":"Bisleri", "price": 10}, {"name":"Pepsi Co.", "price": 15}, {"name":"Aqua", "price": 30}],
+		"officialEmail": "test@test.com",
+		"contactPhone": ["9988998899", "9639639636"],
+		"contactName": "Muru",
+		"city": "Bangalore",
+		"address": "No.14, 1st Floor, Near Alpine Eco Apartments, Dodda Nekkundi, Dodda Nekkundi Extension, Doddanekkundi, Bengaluru, Karnataka 560037"
+	}, {
+		"id": "store3",
+		"lat": 12.9648155,
+		"lng": 77.7101365,
+		"label": "C",
+		"draggable": false,
+		"company": "XYZ Water Supply",
+		"prefferedDeliveryTime": ["7:30AM", "10:30PM"],
+		"availableItems": ["Can Water"],
+		"brands": [{"name":"Bisleri", "price": 10}, {"name":"Fiji Water", "price": 20}, {"name":"Pepsi Co.", "price": 15}, {"name":"Kinley", "price": 16}, {"name":"Aqua", "price": 30}],
+		"officialEmail": "test@test.com",
+		"contactPhone": ["9988998899", "9639639636"],
+		"contactName": "Raju",
+		"city": "Bangalore",
+		"address": "601, Krishvi Prospero, 1st Main C Block, AECS Layout, BrookeFields, AECS Layout - C Block, AECS Layout, Brookefield, Bengaluru, Karnataka 560037"
+	}, {
+		"id": "store4",
+		"lat": 16.9723502,
+		"lng": 18.6971736,
+		"label": "B",
+		"draggable": false,
+		"company": "PQR Water Supply",
+		"prefferedDeliveryTime": ["7:30AM", "10:30PM"],
+		"availableItems": ["Tanker Water", "Can Water"],
+		"brands": [{"name":"Bisleri", "price": 10}, {"name":"Fiji Water", "price": 20}, {"name":"Pepsi Co.", "price": 15}, {"name":"Kinley", "price": 16}, {"name":"Aqua", "price": 30}],
+		"officialEmail": "test@test.com",
+		"contactPhone": ["9988998899", "9639639636"],
+		"contactName": "Muru",
+		"city": "Bangalore",
+		"address": "No.14, 1st Floor, Near Alpine Eco Apartments, Dodda Nekkundi, Dodda Nekkundi Extension, Doddanekkundi, Bengaluru, Karnataka 560037"
+	}]
+}
