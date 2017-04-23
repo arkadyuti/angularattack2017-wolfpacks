@@ -9,6 +9,7 @@ import { DataService } from '../../core/data.service';
 export class HeaderComponent implements DoCheck {
 	public cartList: any = [];
 	public count: number;
+  public isVisible = false;
   constructor(private dataService: DataService) { }
 
   ngDoCheck() {
@@ -20,6 +21,9 @@ export class HeaderComponent implements DoCheck {
 	//   	this.count = this.cartList.reduce( (a, b) => a.qty + b.qty);
 	// }
 
+  }
+  handleNotificationClick(e){
+    this.isVisible = !this.isVisible;
   }
 
 }

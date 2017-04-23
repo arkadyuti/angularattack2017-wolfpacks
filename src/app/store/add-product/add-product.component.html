@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<div  class="card-content">
+  <div  class="content-wrapper">
+
+  <form>
+    <div class="col-md-8 ">
+        <label>Username
+            <select>
+              <option>Choose your stores</option>
+              <option> Kaveri Jal</option>
+              <option> Tunga Waters </option>
+              <option> Himalaya Pure water</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-md-8 ">
+      <label>Product Name
+        <input type="text" placeholder="Product Name" id="productName" 
+            [(ngModel)]="productName" name="productName" required >
+        <div [hidden]="productName.valid || pwd1.pristine" class="alert callout">
+          Product name is Required
+        </div>
+      </label>
+    </div>
+    <div class="col-md-8 ">
+    <label>Quantity
+       <select >
+              <option>1</option>
+              <option>2</option>
+              <option> 3 </option>
+              <option> 4</option>
+        </select>
+        
+        <div [hidden]="productquantity.valid || pwd1.pristine" class="alert callout">
+          Prouduct Quantity Required
+        </div>
+      </label>
+    </div>
+    <div class="col-md-8 ">
+    <label>Type
+        <input type="text" placeholder="Product Name" id="productName" 
+            [(ngModel)]="productType" name="productName" required >
+        <div [hidden]="productType.valid || pwd1.pristine" class="alert callout">
+          Product Type is Required
+        </div>
+      </label>
+    </div>
+
+    
+    <div class="col-md-8 ">
+      <div class="expanded button-group">
+        <a class="success button" (click)="addProduct()">Add Product</a>
+        <a class="cancel button" (click)="cancel()">Cancel</a>
+      </div>
+    </div>    
+</form>
+
+  
+  </div>
+  </div>
+
+

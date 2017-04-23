@@ -23,6 +23,7 @@ import { MenuComponent } from './store/listProducts/menu.component';
 import { SearchComponent } from './store/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchResultComponent } from './store/search-result/search-result.component';
+import { AddProductComponent }  from './store/add-product/add-product.component';
 
 import { DataService } from './core/data.service';
 import { MapSearchComponent } from './store/map-search/map-search.component';
@@ -36,6 +37,7 @@ import { DatePipe } from 'app/date.pipe';
 import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
  import { isShopClosedDirective } from 'app/shopClose.directive';
 import { EachShopComponent } from 'app/store/each-shop/each-shop.component';
+import { ShopComponent } from './store/shop/shop.component';
 
  const firebaseAuthConfig = {
   provider: AuthProviders.Password,
@@ -71,7 +73,9 @@ const firebaseConfig = {
     SignUpComponent,
     userProfileComponent,
     CartPopupComponent,
-    EachShopComponent
+    AddProductComponent,
+    EachShopComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,

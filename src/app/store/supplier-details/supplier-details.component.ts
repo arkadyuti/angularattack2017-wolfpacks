@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { DataService } from 'app/core/data.service';
+import { AngularFire } from 'angularfire2';
+
+
 
 @Component({
   selector: 'app-supplier-details',
@@ -20,9 +23,47 @@ export class SupplierDetailsComponent implements OnInit {
     public itemTypeCart = {};
     public allCart = {};
     public noItem: boolean = false;
+    public item : any;
 
-    constructor(public dataService: DataService) { }
-
+    constructor(private af: AngularFire, public dataService: DataService) {
+        let obj = [{
+                "quantity": "5",
+                "brands": [
+                    "Bisleri",
+                    "Fiji Water",
+                    "Pepsi Co."
+                ],
+                "company": "PQR Water Supply",
+                "companyID": "store2",
+                "deliveryTime": "7:30PM",
+                "dateStamp": 1452488445471
+            },
+            {
+                "quantity": "1",
+                "brands": [
+                    "Bisleri"
+                ],
+                "company": "PQR Water Supply",
+                "companyID": "store2",
+                "deliveryTime": "7:30PM",
+                "dateStamp": 1452488455471
+            }
+        ]
+        this.postCartDataFire("/cart", "112233445", obj)
+        // this.getCartDataFire();
+    }
+    postCartDataFire(url, key, obj){
+        const itemObservable = this.af.database.object('/item/'+key);
+        itemObservable.set(obj).catch((e)=> console.error(e.message) );
+    }
+    getCartDataFire(){
+        // console.log("test fire");
+        this.item = this.af.database.object('/cart', { preserveSnapshot: true });
+        this.item.subscribe(snapshot => {
+          console.log(snapshot.key)
+          console.log(snapshot.val())
+        });
+    }
     handleTargetBrand(brand) {
         this.brandListCart[Object.keys(brand)[0]] = brand[Object.keys(brand)[0]]
         this.allCart['brandListCart'] = Object.assign({}, this.brandListCart)
