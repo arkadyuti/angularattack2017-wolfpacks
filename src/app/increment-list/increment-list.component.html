@@ -1,6 +1,6 @@
 <div class="item-left pull-left">
-	<div>{{brand}}</div>
-	<div>&#8377; 16</div>
+	<div>{{brand.name}}</div>
+	<div>&#8377; {{brand.price}}</div>
 </div>
 <input type="text" class="hiddenValue" (click)="incrementalValue($event)" name="itemQuantityKinley_{{index}}" [value]= "name1 " id="itemQuantityKinley_{{index}}" >
 <label for="itemQuantityKinley_{{index}}" class="item-right-increment pull-right">

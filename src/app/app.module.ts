@@ -25,6 +25,7 @@ import { SupplierDetailsComponent } from './supplier-details/supplier-details.co
 import { IncrementListComponent } from './increment-list/increment-list.component';
 import { CartItemTypeComponent } from './cart-item-type/cart-item-type.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { FooterComponent } from './footer/footer.component';
     SupplierDetailsComponent,
     IncrementListComponent,
     CartItemTypeComponent,
-    FooterComponent
+    FooterComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
