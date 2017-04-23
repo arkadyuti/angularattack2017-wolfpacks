@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from 'app/core/data.service';
+import { MapsAPILoader } from 'angular2-google-maps/core';
 
 @Component({
   selector: 'app-each-shop',
@@ -12,11 +13,14 @@ export class EachShopComponent implements OnInit {
 @Input() shop;
 @Output() clickShop = new EventEmitter();
 geoLoc:any = undefined;
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService,
+  private mapsAPILoader: MapsAPILoader) {}
 
   ngOnInit() {
     this.location = this.dataService.getLocation();
-    this.geoLoc = new google.maps.Geocoder().geocode({'location':this.location}, this.geoCoderCb.bind(this));
+    this.mapsAPILoader.load().then(() => {
+      this.geoLoc = new google.maps.Geocoder().geocode({'location':this.location}, this.geoCoderCb.bind(this));
+    });
   }
 
     geoCoderCb(results, status) {
