@@ -8,6 +8,7 @@ import { DataService } from '../data.service';
 })
 export class SupplierDetailsComponent implements OnInit {
     @Input() listOfStores;
+    @Input() shopData;
 
     @Output() 
     backToList = new EventEmitter();
@@ -17,7 +18,8 @@ export class SupplierDetailsComponent implements OnInit {
 
     public brandListCart = {};
     public itemTypeCart = {};
-    public allCart = {}
+    public allCart = {};
+    public noItem: boolean = false;
 
     constructor(public dataService: DataService) { }
 
