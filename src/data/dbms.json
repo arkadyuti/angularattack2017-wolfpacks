@@ -6,14 +6,17 @@
          "personEmail":"avi@quid.com",
          "personId":"11223344556677",
          "dateStamp":1452488445471,
-         "address":{
+         "store":{
+               "address":{
             "aptName":"KGS",
             "street":"1st Cross Road",
             "locality":"Mahadevapura",
             "landmark":"Naina Bakery",
             "city":"Blr",
             "ZIP":"560016"
-         },
+         }
+         }
+         ,
          "personPhoto":"https://scontent.fblr1-2.fna.fbcdn.net/v/t1.0-9/12247035_1254976961194542_6531272382780209589_n.jpg?oh=38abf72fbfae28e008df645c019f24cc&oe=594FB66C"
       },
       {

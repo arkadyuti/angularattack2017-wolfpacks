@@ -1,11 +1,9 @@
 <app-header></app-header>
-
 <div  class="card-content">
   <div  class="content-wrapper">
-
   <form>
     <div class="col-md-8 ">
-        <label>Username
+        <label>
             <select>
               <option>Choose your stores</option>
               <option> Kaveri Jal</option>
@@ -15,7 +13,7 @@
         </label>
     </div>
     <div class="col-md-8 ">
-      <label>Product Name
+      <label>Shope Name
         <input type="text" placeholder="Product Name" id="productName" 
             [(ngModel)]="productName" name="productName" required >
         <div [hidden]="productName.valid || pwd1.pristine" class="alert callout">
@@ -23,34 +21,40 @@
         </div>
       </label>
     </div>
+    
     <div class="col-md-8 ">
-    <label>Quantity
-       <select >
-              <option>1</option>
-              <option>2</option>
-              <option> 3 </option>
-              <option> 4</option>
-        </select>
-        
-        <div [hidden]="productquantity.valid || pwd1.pristine" class="alert callout">
-          Prouduct Quantity Required
+    <label>landmark
+        <input type="text" placeholder="Product Name" id="productName" 
+            [(ngModel)]="shopLandmark" name="productName" required >
+        <div [hidden]="shopLandmark.valid || pwd1.pristine" class="alert callout">
+          
         </div>
       </label>
     </div>
+
     <div class="col-md-8 ">
-    <label>Type
+    <label>city
         <input type="text" placeholder="Product Name" id="productName" 
-            [(ngModel)]="productType" name="productName" required >
-        <div [hidden]="productType.valid || pwd1.pristine" class="alert callout">
+            [(ngModel)]="shopCity" name="shopCity" required >
+        <div [hidden]="shopCity.valid || pwd1.pristine" class="alert callout">
           Product Type is Required
         </div>
       </label>
     </div>
 
+    <div class="col-md-8 ">
+    <label>ZIP
+        <input type="text" placeholder="Product Name" id="productName" 
+            [(ngModel)]="shopZip" name="productName" required >
+        <div [hidden]="shopZip.valid || pwd1.pristine" class="alert callout">
+          Product Type is Required
+        </div>
+      </label>
+    </div>
     
     <div class="col-md-8 ">
       <div class="expanded button-group">
-        <a class="success button" (click)="addProduct()">Add Product</a>
+        <a class="success button" (click)="addProduct()">Add Shop</a>
         <a class="cancel button" (click)="cancel()">Cancel</a>
       </div>
     </div>    
