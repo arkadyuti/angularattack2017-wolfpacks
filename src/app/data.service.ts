@@ -57,7 +57,7 @@ export class DataService {
 
   getCartItems() {
     return this.Cart;
-  };
+  }
   // setItem(item) {
   //   console.log(item);
   // }
