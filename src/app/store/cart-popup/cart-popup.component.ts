@@ -11,5 +11,6 @@ export class CartPopupComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }
