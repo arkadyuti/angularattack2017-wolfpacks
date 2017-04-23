@@ -75,7 +75,7 @@ export class DataService {
     if(item.qty != 0) {
       if(this.Cart.length > 0) {
         this.Cart.map( (res, i) => {
-          if(res.name === item.name) {
+          if( (res.name === item.name) && (res.shopName === item.shopName)) {
             this.Cart[i] = item;
           } else {
             this.Cart.push(item);
