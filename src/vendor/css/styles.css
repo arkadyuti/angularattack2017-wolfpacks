@@ -13,6 +13,9 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
     cursor: pointer;
 }
 /*Cart Popup - STAR*/
+.modal-content .modal-header i {
+    color:#000;
+}
 #login-modal .modal-dialog {
     width: 350px;
 }
