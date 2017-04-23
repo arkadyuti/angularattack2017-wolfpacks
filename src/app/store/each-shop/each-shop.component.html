@@ -1,0 +1,7 @@
+<span [shopCloseDirective]="shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe" >
+      <i class="material-icons">opacity</i>
+      <p>{{shop.company}}</p>
+      <p *ngIf="shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe">
+        Closed
+      </p>
+  </span>

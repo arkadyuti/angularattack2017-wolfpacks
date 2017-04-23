@@ -35,6 +35,7 @@ import { CartPopupComponent } from './store/cart-popup/cart-popup.component';
 import { DatePipe } from 'app/date.pipe';
 import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
  import { isShopClosedDirective } from 'app/shopClose.directive';
+import { EachShopComponent } from 'app/store/each-shop/each-shop.component';
 
  const firebaseAuthConfig = {
   provider: AuthProviders.Password,
@@ -69,7 +70,8 @@ const firebaseConfig = {
     LoginComponent,
     SignUpComponent,
     userProfileComponent,
-    CartPopupComponent
+    CartPopupComponent,
+    EachShopComponent
   ],
   imports: [
     BrowserModule,
