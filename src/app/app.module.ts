@@ -29,6 +29,7 @@ import { IncrementListComponent } from './store/increment-list/increment-list.co
 import { CartItemTypeComponent } from './store/cart-item-type/cart-item-type.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { CartPageComponent } from './store/cart-page/cart-page.component';
+import { CartPopupComponent } from './store/cart-popup/cart-popup.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { CartPageComponent } from './store/cart-page/cart-page.component';
     CartPageComponent,
     LoginComponent,
     SignUpComponent,
-    userProfileComponent
+    userProfileComponent,
+    CartPopupComponent
   ],
   imports: [
     BrowserModule,
