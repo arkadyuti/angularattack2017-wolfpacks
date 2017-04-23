@@ -8,7 +8,7 @@ export class DataService {
   location: any;
   formatted_address: string;
   Items: any = [];
-
+  Cart: any = [];
   constructor(private http : Http) {
 
   }
@@ -50,6 +50,14 @@ export class DataService {
   getFormattedAddress() {
     return this.formatted_address
   }
+
+  addToCart(item) {
+    this.Cart.push(item);
+  }
+
+  getCartItems() {
+    return this.Cart;
+  };
   // setItem(item) {
   //   console.log(item);
   // }

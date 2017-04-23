@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { DataService } from '../data.service';
 
@@ -11,10 +11,20 @@ import { DataService } from '../data.service';
 export class MenuComponent implements OnInit {
   @Input() listOfStores;
   menuItems: Array<Object> = [];
+
+
+  @Output()
+  shopDetail = new EventEmitter();
+
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
 
+  }
+
+  showItems(e, object) {
+  	// e.preventDefault();
+  	this.shopDetail.emit(object);
   }
 
 }

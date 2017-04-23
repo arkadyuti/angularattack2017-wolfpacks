@@ -18,10 +18,10 @@
 	                </a>
 	            </li>
 	            <li *ngFor="let shop of listOfStores">
-	            	<a href="#/user">
+	            	<span (click)="showItems($event, shop)">
 	                    <i class="material-icons">opacity</i>
 	                    <p>{{shop.company}}</p>
-	                </a>
+	                </span>
 	            </li>
 	            <!-- <li class="">
 	                <a href="#/user">

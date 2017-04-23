@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -9,14 +9,17 @@ import { DataService } from '../data.service';
 export class SupplierDetailsComponent implements OnInit {
     @Input() listOfStores;
 
-    public listOfBrands = ["Bisleri", "Kinley", "Aqua", "Nestle"]
-    public listOfItemsType = ["Tanker Water", "Can Water"]
+    @Output() 
+    backToList = new EventEmitter();
+
+    public listOfBrands = [];
+    public listOfItemsType = [];
 
     public brandListCart = {};
     public itemTypeCart = {};
     public allCart = {}
 
-    constructor() { }
+    constructor(public dataService: DataService) { }
 
     handleTargetBrand(brand) {
         this.brandListCart[Object.keys(brand)[0]] = brand[Object.keys(brand)[0]]
@@ -32,10 +35,24 @@ export class SupplierDetailsComponent implements OnInit {
 
 
     ngOnInit() {
+        this.listOfBrands = this.shopData.brands;
+        this.listOfItemsType = this.shopData.availableItems;
     }
 
-    checkBtn(){
-        
+    checkBtn(e){
+        if(Object.keys(this.allCart).length > 0) {
+            let CartItems = this.dataService.getCartItems();
+            this.dataService.addToCart(this.allCart);
+        } else {
+            this.noItem = true;
+            setTimeout( () => {
+                this.noItem = false;
+            }, 1000);
+        }
+    }
+
+    moveToList() {
+        this.backToList.emit(true);
     }
 
 

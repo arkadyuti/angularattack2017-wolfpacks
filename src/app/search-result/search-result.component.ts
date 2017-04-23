@@ -10,7 +10,8 @@ export class SearchResultComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
   listOfStores : any = [];
-
+  isSearchPage : boolean = true;
+  shopDetails;
   ngOnInit() {
     this.getListOfStores({lat:20});
   }
@@ -31,5 +32,16 @@ export class SearchResultComponent implements OnInit {
       }
     })
 
+   }
+
+   details(shop) {
+     if(shop) {
+       this.isSearchPage = !this.isSearchPage;
+       this.shopDetails = shop;
+     }
+   }
+
+   handleBack(check) {
+     this.isSearchPage = !this.isSearchPage;
    }
   }

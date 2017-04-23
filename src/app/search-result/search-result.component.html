@@ -9,7 +9,8 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<app-menu [listOfStores]="listOfStores"></app-menu>
+			<app-menu *ngIf="isSearchPage" [listOfStores]="listOfStores" (shopDetail)="details($event)"></app-menu>
+			<app-supplier-details *ngIf="!isSearchPage" [listOfStores]="listOfStores" [shopData]="shopDetails" (backToList)="handleBack(check)"></app-supplier-details>
 		</div>
 	</div>
 </div>
