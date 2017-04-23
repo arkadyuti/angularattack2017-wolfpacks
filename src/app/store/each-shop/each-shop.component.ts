@@ -10,7 +10,7 @@ export class EachShopComponent implements OnInit {
   timeTaken = 'too mc';
   location : any;
 @Input() shop;
-@Output() click = new EventEmitter();
+@Output() clickShop = new EventEmitter();
 geoLoc:any = undefined;
   constructor(private dataService: DataService) {}
 
@@ -40,7 +40,7 @@ geoLoc:any = undefined;
     			}
 
   showStore() {
-    this.click.emit(this.shop)
+    this.clickShop.emit(this.shop)
   }
 
 }

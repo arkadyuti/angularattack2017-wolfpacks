@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
   showItems(e, shop) {
   	// e.preventDefault();
     const shopIsClosed = this.isShopClosedPipe.transform(this.datePipe.transform(shop.prefferedDeliveryTime));
-  	if(shopIsClosed) { this.shopDetail.emit(shop); }
+  	if(!shopIsClosed) { this.shopDetail.emit(shop); }
   }
 
 }
