@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AgmCoreModule, MapsAPILoader } from 'angular2-google-maps/core';
+import { AngularFireModule } from 'angularfire2';
+
 
 //Router
 import { routes } from './app.router';
@@ -13,7 +15,7 @@ import { LoginComponent } from './user/login/login.component';
 import { SignUpComponent }    from './user/signUp/sign-up.component';
 import { userProfileComponent }    from './user/userProfile/userprofile.component';
 import { UserService } from './user/userShared/user.service';
-
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 
 //Maps
@@ -35,7 +37,18 @@ import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
  import { isShopClosedDirective } from 'app/shopClose.directive';
 import { EachShopComponent } from 'app/store/each-shop/each-shop.component';
 
-
+ const firebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+}
+const firebaseConfig = {
+       apiKey: "AIzaSyDJR3ZTCpei287mU7DzviEC6q34mVvRrNk",
+         authDomain: "angularattack-b35c6.firebaseapp.com",
+         databaseURL: "https://angularattack-b35c6.firebaseio.com",
+         projectId: "angularattack-b35c6",
+         storageBucket: "angularattack-b35c6.appspot.com",
+         messagingSenderId: "807124795822"
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +80,7 @@ import { EachShopComponent } from 'app/store/each-shop/each-shop.component';
     AgmCoreModule.forRoot(),
     ReactiveFormsModule,
     routes,
+    AngularFireModule.initializeApp(firebaseConfig,firebaseAuthConfig),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCM4aNTzIdRr35r8aNTikBV_BPjl-C3EMA',
       libraries: ["places"]
