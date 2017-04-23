@@ -9,17 +9,17 @@ import { Router } from '@angular/router';
 
 export class SignUpComponent {
   email: string;
-  password1: string;
-  password2: string;
+  password: string;
+  confirmPassword: string;
   passwordFail: boolean = false;
 
   constructor( private router: Router){}
 
-  
-  
+
+
 
   cancel(){
     this.router.navigate(['/admin/login']);
   }
-  
+
  }

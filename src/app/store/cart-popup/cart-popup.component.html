@@ -8,13 +8,14 @@
 						<i class="material-icons" (click)="handlePopup($event)">close</i>
 					</button>
 				</div>
-                
+
                 <!-- Begin # DIV Form -->
                 <div id="div-forms">
-                
+
                     <!-- Begin # Login Form -->
-                    <form id="login-form">
-		                <div class="modal-body">  
+                    <form id="login-form" [formGroup]="form"
+                    (ngSubmit)="onSubmit(form.value)">
+		                <div class="modal-body">
                             <div class="col-xs-8">
                                 <table class="table table-striped">
                                     <thead>
@@ -44,31 +45,43 @@
                             <div class="col-xs-4">
                                   <div class="form-group">
                                     <label class="control-label">Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your Name" required>
+                                    <input type="text" class="form-control" placeholder="Enter your Name" name="name" id="name" formControlName="name" >
+                                    <div *ngIf="form.controls.name.errors?.pattern" class="error">
+                                      Name has invalid characters
+                                    </div>
                                   </div>
                                   <div class="form-group">
                                     <label class="control-label">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Enter Email Address" required>
+                                    <input type="text" class="form-control" placeholder="Enter Email Address" name="email" id="email" formControlName="email" >
+                                    <div *ngIf="form.controls.email.errors?.pattern" class="error">
+                                      Email has invalid characters
+                                    </div>
                                   </div>
                                   <div class="form-group">
                                     <label class="control-label">Mobile number</label>
-                                    <input type="number" class="form-control" placeholder="Enter Mobile Number" required>
+                                    <input type="number" class="form-control" placeholder="Enter Mobile Number" name="mobile" id="mobile" formControlName="mobile" >
+                                    <div *ngIf="form.controls.mobile.errors?.pattern" class="error">
+                                      Mobile has invalid characters
+                                    </div>
                                   </div>
                                   <div class="form-group">
                                     <label class="control-label">Shipping Address</label>
-                                    <textarea class="form-control"></textarea>
+                                    <textarea class="form-control" name="address" id="address" formControlName="address"></textarea>
+                                    <div *ngIf="form.controls.address.errors?.pattern" class="error">
+                                      Invalid Address
+                                    </div>
                                   </div>
                             </div>
         		    	</div>
 				        <div class="modal-footer">
-                            
+
                             <div class="text-right">
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">CHECKOUT</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!form.valid">CHECKOUT</button>
                             </div>
 				        </div>
                     </form>
                     <!-- End # Login Form -->
-                    
+
                     <!-- Begin | Lost Password Form -->
                     <form id="lost-form" style="display:none;">
     	    		    <div class="modal-body">
@@ -89,7 +102,7 @@
 		    		    </div>
                     </form>
                     <!-- End | Lost Password Form -->
-                    
+
                     <!-- Begin | Register Form -->
                     <form id="register-form" style="display:none;">
             		    <div class="modal-body">
@@ -112,10 +125,16 @@
 		    		    </div>
                     </form>
                     <!-- End | Register Form -->
-                    
+
                 </div>
                 <!-- End # DIV Form -->
-                
+
 			</div>
 		</div>
 	</div>
+
+<div *ngIf="confirmPopUp" class="order-success">
+  <p class="success-message">
+    Your Order is confirmed
+  </p>
+</div>

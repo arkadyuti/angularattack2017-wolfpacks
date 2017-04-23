@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Validators, FormBuilder } from '@angular/forms';
 import { DataService } from '../../core/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-popup',
@@ -7,16 +9,18 @@ import { DataService } from '../../core/data.service';
   styleUrls: ['./cart-popup.component.css']
 })
 export class CartPopupComponent implements OnInit {
+  form;
+  confirmPopUp: boolean = false;
 	@Input() visiblity;
 	public alterDisplay = "displayNone";
-	public toggleDisplay = false;
+	public toggleDisplay : boolean = false;
 
 	public products = [];
 
 
-	constructor(private dataService: DataService) {
-
-	}
+	constructor(private dataService: DataService,
+  private formBuilder: FormBuilder,
+  private router: Router) {}
 	ngOnChanges(){
 		if(this.toggleDisplay || this.visiblity){
 			this.alterDisplay = "displayVisible"
@@ -42,9 +46,31 @@ export class CartPopupComponent implements OnInit {
 		this.visiblity = false;
 		this.toggleDisplay = true;
 	}
+
+  onSubmit(formFields) {
+    this.confirmPopUp = true;
+    setTimeout(()=>{
+      this.confirmPopUp = false
+    }, 4000);
+    this.handlePopup();
+  }
 	ngOnInit() {
 		this.products = this.dataService.getCartItems();
 		// this.toggleDisplay = this.visiblity
+    this.form = this.formBuilder.group({
+      name: this.formBuilder.control('', Validators.compose([
+        Validators.required
+      ])),
+      email: this.formBuilder.control('', Validators.compose([
+        Validators.required
+      ])),
+      mobile: this.formBuilder.control('+91', Validators.compose([
+        Validators.required
+      ])),
+      address: this.formBuilder.control('', Validators.compose([
+        Validators.required
+      ])),
+    });
 	}
-  	
+
 }

@@ -6,9 +6,12 @@
     		'margin-left': '45px',
     		'margin-top': '-10px'
 		}">
-        Closed
+        Closed Now
       </p>
-      <p *ngIf="!(shop.prefferedDeliveryTime | datePipe | customCheckForClosedPipe)">
-        {{this.timeTaken}}
+      <p *ngIf="timeTaken" [ngStyle]="{
+    		'margin-left': '45px',
+    		'margin-top': '-10px'
+		}">
+        Delivered in {{this.timeTaken}}
       </p>
   </span>
