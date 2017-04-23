@@ -618,6 +618,12 @@ button.close {
 /*Side List -END*/
 
 /*Header - START*/
+.dropdown-toggle .header-link-text{
+    color:#000;
+}
+.dropdown-toggle .header-link-text:hover{
+    border-bottom: 2px solid #767676;
+}
 .navbar .notification{
     position: absolute;
     top: 5px;
