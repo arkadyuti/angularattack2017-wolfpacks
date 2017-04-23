@@ -20,8 +20,13 @@
             </a>
         </li>
         <li>
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#login">
+            <a class="dropdown-toggle" data-toggle="dropdown" *ngIf="!isLoggedIn" href="/login">
                 <p class="header-link-text">Login</p>
+            </a>
+            <a class="dropdown-toggle" (click)="logout()" data-toggle="dropdown" *ngIf="isLoggedIn">  
+
+            
+                <p class="header-link-text" >Logout</p>
             </a>
         </li>
         <li class="dropdown">
@@ -31,6 +36,6 @@
                 <p class="hidden-lg hidden-md">Notifications</p>
             </a>
         </li>
-        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#pablo"><i class="material-icons">person</i><p class="hidden-lg hidden-md">Profile</p></a></li>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" *ngIf="isLoggedIn" href="#pablo"><i class="material-icons">person</i><p class="hidden-lg hidden-md">Profile</p></a></li>
     </ul>
 </div>
