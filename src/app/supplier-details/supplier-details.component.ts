@@ -32,7 +32,7 @@ export class SupplierDetailsComponent implements OnInit {
             }
         }
         // this.postCart(obj);
-        this.getPost();
+        this.getCartData("availableStores");
 
     }
 
@@ -48,9 +48,9 @@ export class SupplierDetailsComponent implements OnInit {
     }
 
 
-    getPost() {
+    getCartData(cartUrl) {
         var db = firebase.database();
-        var ref = db.ref("cart");
+        var ref = db.ref(cartUrl);
 
         ref.on("value", function(snapshot) {
           console.log(snapshot.val());
@@ -60,9 +60,9 @@ export class SupplierDetailsComponent implements OnInit {
 
 
     }
-    postCart(obj){
+    postCart(url, obj){
         var db = firebase.database();
-        var ref = db.ref("cart");
+        var ref = db.ref(url);
         ref.set(obj).then(()=> console.log("done")).catch ((error)=>{
             alert(`failed upload: ${error}`);
         });
