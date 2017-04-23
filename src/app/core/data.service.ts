@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/observable';
 import { Observer } from 'rxjs/Observer';
+import { AngularFire } from 'angularfire2';
 // import 'rxjs/Rx';
 
 @Injectable()
@@ -10,14 +11,20 @@ export class DataService {
   formatted_address: string;
   Items: any = [];
   Cart: any = [];
-  constructor(private http : Http) {
+  constructor(private http : Http, private af: AngularFire) {
 
   }
 
   fetchData() {
-    return this.http.get('./data/dbms.json').map( (res) => {
-        this.Items = res.json();
-        return true;
+      let data = this.af.database.object('/shops', { preserveSnapshot: true });
+      data.subscribe(snapshot => {
+          console.log(snapshot.key)
+          console.log(snapshot.val())
+        });
+
+      return this.http.get('./data/dbms.json').map( (res) => {
+          this.Items = res.json();
+          return true;
     })
   }
 
