@@ -1,20 +1,14 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './admin/adminComponent/admin.component';
 
-import { SignUpComponent }    from './admin/signUp/sign-up.component';
-
-import { LoginComponent }    from './admin/login/login.component';
 import { AppComponent } from './app.component';
-
-import { CartPageComponent } from './cart-page/cart-page.component';
-
-import { HomeComponent } from './home/home.component';
-import { SearchResultComponent } from './search-result/search-result.component';
-import { userProfileComponent }    from './admin/userProfile/userprofile.component';
-import { UserService }    from './admin/adminShared/user.service';
-
-
+import { SignUpComponent } from './user/signUp/sign-up.component';
+import { LoginComponent } from './user/login/login.component';
+import { CartPageComponent } from './store/cart-page/cart-page.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SearchResultComponent } from './store/search-result/search-result.component';
+import { userProfileComponent } from './user/userProfile/userprofile.component';
+import { UserService } from './user/userShared/user.service';
 
 export const router: Routes = [
 	{ path:'', redirectTo: 'home', pathMatch: 'full'},
