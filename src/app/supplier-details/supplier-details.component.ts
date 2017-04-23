@@ -21,7 +21,7 @@ export class SupplierDetailsComponent implements OnInit {
     public allCart = {};
     public noItem: boolean = false;
 
-    constructor() { }
+    constructor(public dataService: DataService) { }
 
     handleTargetBrand(brand) {
         this.brandListCart[Object.keys(brand)[0]] = brand[Object.keys(brand)[0]]
