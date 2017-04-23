@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchResultComponent } from './store/search-result/search-result.component';
 import { userProfileComponent } from './user/userProfile/userprofile.component';
 import { UserService } from './user/userShared/user.service';
+import { AddProductComponent }  from './store/add-product/add-product.component';
+
 
 export const router: Routes = [
 	{ path:'', redirectTo: 'home', pathMatch: 'full'},
@@ -17,7 +19,8 @@ export const router: Routes = [
 	{ path:'login', component: LoginComponent},
 	{ path:'signup', component: SignUpComponent},
 	{ path: 'userprofile', component: userProfileComponent },
-	{ path: 'search-result/cart-page', component: CartPageComponent }
+	{ path: 'search-result/cart-page', component: CartPageComponent },
+	{ path: 'search-result/addproduct', component: AddProductComponent }
 
 ]
 
