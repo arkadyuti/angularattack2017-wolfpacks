@@ -26,8 +26,11 @@ export class DataService {
   }
 
     getLocation() {
-        let mapLocation = JSON.parse(sessionStorage['mapLocation']);
-        if(mapLocation){
+      let mapLocation;
+      if(sessionStorage['mapLocation']){
+        mapLocation = JSON.parse(sessionStorage['mapLocation']);
+      }
+      if(mapLocation){
             this.location = mapLocation;
             return mapLocation
         }
@@ -52,12 +55,20 @@ export class DataService {
   }
 
   setFormattedAddress(address) {
+    sessionStorage.setItem('formatted_address', JSON.stringify(address));
     this.formatted_address = address;
   }
 
   getFormattedAddress() {
+    let formatted_address;
+    if(sessionStorage['formatted_address']){
+      formatted_address = JSON.parse(sessionStorage['formatted_address']);
+      this.formatted_address = formatted_address;
+      return formatted_address
+    }
     return this.formatted_address
   }
+
 
   addToCart(item) {
     this.Cart.push(item);
