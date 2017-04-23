@@ -1,47 +1,26 @@
-<div class="row expanded align-center">
-    <h1>Register an Account</h1>
-</div>
+<app-header></app-header>
 
-<div class="row align-center">
-<form>
-    <div class="small-12  columns">
-        <label>Username
-            <input type="text" placeholder="Enter Email Address" id="email" 
-                [(ngModel)]="email" name="email" required #em="ngModel">
-            <div [hidden]="em.valid || em.pristine" class="alert callout">
-                Email is required
+    <div class="card-content vertical-center vertical-top">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 addshop-container">
+                <!-- <form> -->
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" [(ngModel)]="email" class="form-control" id="shopName" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" [(ngModel)]="password1" class="form-control" placeholder="Password">
+                    </div>
+                     <div *ngIf="passwordFail" class="alert callout">
+                      Passwords Do Not Match
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" [(ngModel)]="password1" class="form-control" placeholder="Password">
+                    </div>
+                     <button type="submit" (click)="signup()" class="btn btn-danger">Sign Up</button>
+                      <button type="submit" (click)="cancel()" class="btn btn-danger">cancel</button>
             </div>
-        </label>
-    </div>
-
-    <div class="small-12 columns">
-      <label>Password
-        <input type="password" placeholder="Enter Password" id="password1" 
-            [(ngModel)]="password1" name="password1" required #pwd1="ngModel">
-        <div [hidden]="pwd1.valid || pwd1.pristine" class="alert callout">
-          Password required
         </div>
-      </label>
     </div>
-
-    <div class="small-12  columns">
-      <label>Confirm 
-        <input type="password" placeholder="Confirm Password" id="password2" 
-            [(ngModel)]="password2" name="password2" required #pwd2="ngModel">
-        <div [hidden]="pwd2.valid || pwd2.pristine" class="alert callout">
-          Confirm Password
-        </div>
-      </label>
-    </div>
-
-    <div *ngIf="passwordFail" class="alert callout">
-      Passwords Do Not Match
-    </div>
-    <div class="small-12 columns">
-      <div class="expanded button-group">
-        <a class="success button" (click)="signUp()">Sign Up</a>
-        <a class="cancel button" (click)="cancel()">Cancel</a>
-      </div>
-    </div>    
-</form>
-</div>
