@@ -30,9 +30,9 @@ import { CartItemTypeComponent } from './store/cart-item-type/cart-item-type.com
 import { FooterComponent } from './pages/footer/footer.component';
 import { CartPageComponent } from './store/cart-page/cart-page.component';
 import { CartPopupComponent } from './store/cart-popup/cart-popup.component';
-import { DatePipe } from './date.pipe';
-import { CustomCheckForClosedPipe } from './customCheckForClosedPipe';
- import { isShopClosedDirective } from './shopClose.directive'
+import { DatePipe } from 'app/date.pipe';
+import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
+ import { isShopClosedDirective } from 'app/shopClose.directive';
 
 
 @NgModule({
@@ -51,7 +51,7 @@ import { CustomCheckForClosedPipe } from './customCheckForClosedPipe';
     FooterComponent,
     DatePipe,
     CustomCheckForClosedPipe,
-    isShopClosedDirective
+    isShopClosedDirective,
     CartPageComponent,
     LoginComponent,
     SignUpComponent,

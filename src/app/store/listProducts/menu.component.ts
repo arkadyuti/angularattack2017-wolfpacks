@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CustomCheckForClosedPipe } from '../customCheckForClosedPipe';
-import { DatePipe } from '../date.pipe'
+import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
+import { DatePipe } from 'app/date.pipe';
 import { DataService } from '../../core/data.service';
 
 @Component({
