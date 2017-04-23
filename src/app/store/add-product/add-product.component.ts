@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AddProductComponent implements OnInit {
 @Input() shop;
+  public productName: string ="";
+  public productquantity: number =0;
+  public productType: string ="";
   constructor() { }
 
   ngOnInit() {
