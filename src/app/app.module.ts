@@ -26,7 +26,16 @@ import { IncrementListComponent } from './increment-list/increment-list.componen
 import { CartItemTypeComponent } from './cart-item-type/cart-item-type.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { AngularFireModule } from 'angularfire2';
 
+const firebaseConfig = {
+    apiKey: "AIzaSyBxn-KbHrS8t-5-SaG8QEv4CVw9rbUcxvw",
+    authDomain: "angularattack-8d974.firebaseapp.com",
+    databaseURL: "https://angularattack-8d974.firebaseio.com",
+    projectId: "angularattack-8d974",
+    storageBucket: "angularattack-8d974.appspot.com",
+    messagingSenderId: "39795758925"
+ };
 
 @NgModule({
   declarations: [
@@ -52,6 +61,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     AgmCoreModule.forRoot(),
     ReactiveFormsModule,
     routes,
+    AngularFireModule.initializeApp(firebaseConfig),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCM4aNTzIdRr35r8aNTikBV_BPjl-C3EMA',
       libraries: ["places"]
