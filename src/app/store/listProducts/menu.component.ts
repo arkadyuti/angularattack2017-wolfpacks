@@ -1,12 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
+import { DatePipe } from 'app/date.pipe';
 import { DataService } from '../../core/data.service';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
-  providers: [DataService]
+  providers: [DataService, CustomCheckForClosedPipe, DatePipe]
 })
 export class MenuComponent implements OnInit {
   @Input() listOfStores;
@@ -16,15 +17,18 @@ export class MenuComponent implements OnInit {
   @Output()
   shopDetail = new EventEmitter();
 
-  constructor(public dataService: DataService) { }
+  constructor(private dataService: DataService,
+    private isShopClosedPipe: CustomCheckForClosedPipe,
+  private datePipe: DatePipe) { }
 
   ngOnInit() {
 
   }
 
-  showItems(e, object) {
+  showItems(e, shop) {
   	// e.preventDefault();
-  	this.shopDetail.emit(object);
+    const shopIsClosed = this.isShopClosedPipe.transform(this.datePipe.transform(shop.prefferedDeliveryTime));
+  	!shopIsClosed && this.shopDetail.emit(shop);
   }
 
 }

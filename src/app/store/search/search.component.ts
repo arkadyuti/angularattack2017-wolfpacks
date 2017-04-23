@@ -30,6 +30,7 @@ export class SearchComponent implements OnInit {
     // declare var google: any;
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
+
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
         types: ["establishment"]
       });
@@ -46,7 +47,6 @@ export class SearchComponent implements OnInit {
             lat:place.geometry.location.lat(),
             lng:place.geometry.location.lng()
           });
-
           this.dataService.setFormattedAddress(place.formatted_address);
 
           this.router.navigate(['/search-result']);

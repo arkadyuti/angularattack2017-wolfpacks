@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { DataService } from '../../core/data.service';
+import { DataService } from 'app/core/data.service';
 
 @Component({
   selector: 'app-supplier-details',
@@ -10,7 +10,7 @@ export class SupplierDetailsComponent implements OnInit {
     @Input() listOfStores;
     @Input() shopData ;
 
-    @Output() 
+    @Output()
     backToList = new EventEmitter();
 
     public listOfBrands = [];

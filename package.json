@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "preinstall": "npm install -g http-server",
-    "postinstall": "ng build --aot -prod -oh bundles",
+    "postinstall": "ng build",
     "heroku-prebuild": "rm -rf node_modules && npm cache clean",
     "ng": "ng",
     "test": "ng test",

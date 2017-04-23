@@ -17,5 +17,4 @@ export class MapSearchComponent implements OnInit {
   ngOnInit() {
 
   }
-
 }
