@@ -33,6 +33,7 @@ import { CartPopupComponent } from './store/cart-popup/cart-popup.component';
 import { DatePipe } from 'app/date.pipe';
 import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
  import { isShopClosedDirective } from 'app/shopClose.directive';
+import { EachShopComponent } from 'app/store/each-shop/each-shop.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
     LoginComponent,
     SignUpComponent,
     userProfileComponent,
-    CartPopupComponent
+    CartPopupComponent,
+    EachShopComponent
   ],
   imports: [
     BrowserModule,
