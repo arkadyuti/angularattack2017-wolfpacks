@@ -57,18 +57,6 @@ export class SupplierDetailsComponent implements OnInit {
         this.listOfItemsType = this.shopData.availableItems;
     }
 
-    checkBtn(e){
-        if(Object.keys(this.allCart).length > 0) {
-            let CartItems = this.dataService.getCartItems();
-            this.dataService.addToCart(this.allCart);
-        } else {
-            this.noItem = true;
-            setTimeout( () => {
-                this.noItem = false;
-            }, 1000);
-        }
-    }
-
     moveToList() {
         this.backToList.emit(true);
     }

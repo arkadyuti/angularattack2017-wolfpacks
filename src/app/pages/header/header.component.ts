@@ -40,6 +40,10 @@ export class HeaderComponent implements DoCheck {
     this.isVisible = !this.isVisible;
   }
 
+  signup() {
+      this.router.navigate(['/signup']);
+  }
+
   logout(){
   console.log("S");
       //this.af.auth.logout().then((d)=> console.log("E",d)).catch((e)=>console.log(e.message));
