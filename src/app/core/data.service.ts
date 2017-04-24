@@ -12,17 +12,35 @@ export class DataService {
 
   }
 
+  getAnother() {
+    return new Promise((resolve, reject) => {
+            resolve(true);
+    });
+  }
+
   fetchData() {
       let data = this.af.database.object('/shops', { preserveSnapshot: true });
       data.subscribe(snapshot => {
+        let stores =[];
           console.log(snapshot.key)
           console.log(snapshot.val())
+          Object.keys(snapshot.val()).map((key)=>{
+            stores.push(snapshot.val()[key]);
+          });
+
+
+          this.Items =stores;
+          
         });
 
-      return this.http.get('./data/dbms.json').map( (res) => {
-          this.Items = res.json();
-          return true;
-    })
+          return new Promise((resolve, reject) => {
+            resolve(true);
+    });
+    //   return this.http.get('./data/dbms.json').map( (res) => {
+    //       this.Items = res.json();
+    //       console.log(res)
+    //       return true;
+    // })
   }
 
   setLocation(obj) {
@@ -50,7 +68,7 @@ export class DataService {
       let highLatValue = this.location.lat + 0.3;
       let lowLngValue = this.location.lng - 0.3;
       let highLngValue = this.location.lng + 0.3;
-      let availableItems = this.Items.availableStores.filter( (key) => {
+      let availableItems = this.Items.filter( (key) => {
           if(key.lat > lowLatValue && key.lat < highLatValue && key.lng > lowLngValue && key.lng < highLngValue) {
             return key;
           }
