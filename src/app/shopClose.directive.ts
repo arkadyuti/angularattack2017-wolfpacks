@@ -5,6 +5,7 @@ import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 })
 export class isShopClosedDirective {
   @HostBinding('class.shop-closed') isClosed = true;
+  @HostBinding('class.shop-opened') isOpen = true;
 
   // @HostBinding('class.is-favorite-hovering') hovering = false;
   //
@@ -18,5 +19,6 @@ export class isShopClosedDirective {
 
   @Input() set shopCloseDirective(value) {
     this.isClosed = value;
+    this.isOpen = !value;
   }
 }

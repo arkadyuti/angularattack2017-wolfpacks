@@ -1,26 +1,33 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from 'app/core/data.service';
 import { MapsAPILoader } from 'angular2-google-maps/core';
-
+import { CustomCheckForClosedPipe } from 'app/customCheckForClosedPipe';
+import { DatePipe } from 'app/date.pipe';
 @Component({
   selector: 'app-each-shop',
   templateUrl: './each-shop.component.html',
-  styleUrls: ['./each-shop.component.css']
+  styleUrls: ['./each-shop.component.css'],
+  providers: [DataService, CustomCheckForClosedPipe, DatePipe]
 })
 export class EachShopComponent implements OnInit {
-  timeTaken = 'too mc';
+  timeTaken :any ="";
   location : any;
 @Input() shop;
 @Output() clickShop = new EventEmitter();
 geoLoc:any = undefined;
   constructor(private dataService: DataService,
-  private mapsAPILoader: MapsAPILoader) {}
+  private mapsAPILoader: MapsAPILoader,
+  private isShopClosedPipe: CustomCheckForClosedPipe,
+  private datePipe: DatePipe) {}
 
   ngOnInit() {
     this.location = this.dataService.getLocation();
-    this.mapsAPILoader.load().then(() => {
+    const shopIsClosed = this.isShopClosedPipe.transform(this.datePipe.transform(this.shop.prefferedDeliveryTime));
+    if(!shopIsClosed) {
+      this.mapsAPILoader.load().then(() => {
       this.geoLoc = new google.maps.Geocoder().geocode({'location':this.location}, this.geoCoderCb.bind(this));
     });
+  }
   }
 
     geoCoderCb(results, status) {
