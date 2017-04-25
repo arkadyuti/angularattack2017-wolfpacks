@@ -21,7 +21,7 @@ export class DataService {
 
   fetchData() {
       return this.http.get('https://angularattack-b35c6.firebaseio.com/.json').map((res) => {
-        this.Items = res;
+        this.Items = res.json();
         return true;
       })
   }
@@ -51,7 +51,7 @@ export class DataService {
       let highLatValue = this.location.lat + 0.3;
       let lowLngValue = this.location.lng - 0.3;
       let highLngValue = this.location.lng + 0.3;
-      let availableItems = citydata.availableStores.filter( (key) => {
+      let availableItems = this.Items.availableStores.filter( (key) => {
           if(key.lat > lowLatValue && key.lat < highLatValue && key.lng > lowLngValue && key.lng < highLngValue) {
             return key;
           }
