@@ -36,7 +36,7 @@ export class DataService {
           return new Promise((resolve, reject) => {
             resolve(true);
     });*/
-      return this.http.get('/data/dbms.json').map( (res) => {
+      return this.http.get('http://www.mocky.io/v2/58ff051f110000050bf5fe6b').map( (res) => {
            this.Items = res.json();
            console.log(res)
            return true;
