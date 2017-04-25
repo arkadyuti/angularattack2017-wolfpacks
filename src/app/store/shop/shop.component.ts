@@ -18,6 +18,7 @@ export class ShopComponent implements OnInit {
 	constructor(private af: AngularFire, private router: Router){
 		var self = this;
 		// af.auth.logout()
+
      	af.auth.subscribe(user => {
      		console.log(user)
      		this.uId = user.uid;
@@ -26,30 +27,45 @@ export class ShopComponent implements OnInit {
             }
         });
 	}
-
+	location = {};
+   setPosition(position){
+      this.location = position.coords;
+      console.log(position.coords);
+      }
 	ngOnInit() {
+			navigator.geolocation
+			 if(navigator.geolocation){
+      		 navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+     		 
+   		}
+			
 
 	}
+	
+
 	handleAddShopClick(e){
-		this.postAddShopDataFire("user", this.uId, this.shopInputs);
+		this.postAddShopDataFire("/users", this.uId, this.shopInputs);
 		this.router.navigate(['userprofile']);
 	}
 
 	postAddShopDataFire(url, key, obj){
-        const itemObservable = this.af.database.object(url+'/'+key+'/shop'+obj);
+		debugger;
+        const itemObservable = this.af.database.object(url+'/'+key+'/shop');
         itemObservable.set(obj).catch((e)=> console.error(e.message) );
 
         this.handleAddProductClick()
     }
     handleAddProductClick(){
-		this.postAddProductDataFire("user", this.uId, this.product);
+		this.postAddProductDataFire("/users/", this.uId, this.product);
     	this.router.navigate(['/userprofile']);
 	}
 	postAddProductDataFire(url, key, obj){
-        const itemObservable = this.af.database.list(url+'/'+key+'/shop/product'+obj);
+        const itemObservable = this.af.database.list(url+'/'+key+'/shop/product');
         itemObservable.push(obj).catch((e)=> console.error(e.message) );
     }
     cancel(){
     	this.router.navigate(['/userprofile'])
     }
+
+   
 }
