@@ -20,7 +20,7 @@ export class DataService {
 
   fetchData() {
       let data = this.af.database.object('/shops', { preserveSnapshot: true });
-      data.subscribe(snapshot => {
+      /*data.subscribe(snapshot => {
         let stores =[];
           console.log(snapshot.key)
           console.log(snapshot.val())
@@ -35,12 +35,12 @@ export class DataService {
 
           return new Promise((resolve, reject) => {
             resolve(true);
-    });
-    //   return this.http.get('./data/dbms.json').map( (res) => {
-    //       this.Items = res.json();
-    //       console.log(res)
-    //       return true;
-    // })
+    });*/
+      return this.http.get('./data/dbms.json').map( (res) => {
+           this.Items = res.json();
+           console.log(res)
+           return true;
+     });
   }
 
   setLocation(obj) {
@@ -68,7 +68,7 @@ export class DataService {
       let highLatValue = this.location.lat + 0.3;
       let lowLngValue = this.location.lng - 0.3;
       let highLngValue = this.location.lng + 0.3;
-      let availableItems = this.Items.filter( (key) => {
+      let availableItems = this.Items.availableStores.filter( (key) => {
           if(key.lat > lowLatValue && key.lat < highLatValue && key.lng > lowLngValue && key.lng < highLngValue) {
             return key;
           }

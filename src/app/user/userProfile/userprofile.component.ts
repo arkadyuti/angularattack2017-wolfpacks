@@ -25,7 +25,7 @@ export class userProfileComponent  {
      uid: any;
 
      constructor(public af: AngularFire,private router: Router) {
-    	this.af.auth.subscribe(auth => this.uid=auth.uid);
+    	//this.af.auth.subscribe(auth => this.uid=auth.uid);
     	this.getPost();
   	 }
 	  

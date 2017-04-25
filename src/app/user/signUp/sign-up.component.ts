@@ -15,6 +15,8 @@ export class SignUpComponent {
   password1: string;
   password2: string;
   passwordFail: boolean = false;
+  authenticated: boolean;
+
 
   constructor( private router: Router, private af: AngularFire ){}
 
@@ -25,19 +27,30 @@ export class SignUpComponent {
     } else {
       this.passwordFail = false;
       this.registerUser();
+      this.login();
     }
 
   }
   
+  login(){
+     this.af.auth.login({ email: this.email, password: this.password1}).then((res) => 
+     {
+        if (res.provider === 4){
+           this.authenticated = true;
+        }
+       
+      });
+     this.router.navigate(['/userprofile']);
+  }
   registerUser(){
    let obj = {"email":this.email, "password":this.password1}
     this.postRegisterUserDataFire("/users", obj)
   }
 
   postRegisterUserDataFire(url, obj){
-        const itemObservable = this.af.database.list(url);
-        itemObservable.push(obj).catch((e)=> console.error(e.message) );
-        this.router.navigate(['/userprofile']);
+        const itemObservable = this.af.database.object(url);
+        itemObservable.set(obj).catch((e)=> console.error(e.message) );
+        
     }
 
   cancel(){
