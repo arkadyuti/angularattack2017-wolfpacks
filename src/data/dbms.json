@@ -260,6 +260,76 @@
          "contactName":"Muru",
          "city":"Bangalore",
          "address":"No.14, 1st Floor, Near Alpine Eco Apartments, Dodda Nekkundi, Dodda Nekkundi Extension, Doddanekkundi, Bengaluru, Karnataka 560037"
+      }, {
+         "id":"store5",
+         "lat":12.942536,
+         "lng":77.6663442,
+         "label":"B",
+         "draggable":false,
+         "company":"ERT Water Supply",
+         "prefferedDeliveryTime":[
+            {
+               "hours":14,
+               "minutes":30
+            },
+            {
+               "hours":22,
+               "minutes":30
+            }
+         ],
+         "availableItems":[
+            "Tanker Water",
+            "Can Water"
+         ],
+         "brands":[
+            {"name":"Bisleri", "price": 15},
+            {"name":"Fiji Water", "price": 10},
+            {"name":"Pepsi Co.", "price": 10},
+            {"name":"Aqua", "price": 10}
+         ],
+         "officialEmail":"test@test.com",
+         "contactPhone":[
+            "9988998899",
+            "9639639636"
+         ],
+         "contactName":"Muru",
+         "city":"Bangalore",
+         "address":"No.28, HAL Road, Bangalores"
+      }, {
+         "id":"store6",
+         "lat":13.101973,
+         "lng":77.5895843,
+         "label":"B",
+         "draggable":false,
+         "company":"ERT Water Supply",
+         "prefferedDeliveryTime":[
+            {
+               "hours":12,
+               "minutes":30
+            },
+            {
+               "hours":20,
+               "minutes":30
+            }
+         ],
+         "availableItems":[
+            "Tanker Water",
+            "Can Water"
+         ],
+         "brands":[
+            {"name":"Bisleri", "price": 15},
+            {"name":"Fiji Water", "price": 10},
+            {"name":"Pepsi Co.", "price": 10},
+            {"name":"Aqua", "price": 10}
+         ],
+         "officialEmail":"test@test.com",
+         "contactPhone":[
+            "9988998899",
+            "9639639636"
+         ],
+         "contactName":"Muru",
+         "city":"Bangalore",
+         "address":"No.28, HAL Road, Bangalores"
       }
    ]
 }

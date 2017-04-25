@@ -1,7 +1,7 @@
 <div class="card-content">
   <div class="content-wrapper">
     <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (centerChange)="onChange($event)">
-      	<sebm-google-map-marker *ngFor="let mark of listOfStores; let i = index" [latitude]="mark.lat" [longitude]="mark.lng" [label]="mark.label">
+      	<sebm-google-map-marker *ngFor="let mark of listOfStores; let i = index" [latitude]="mark.lat" [longitude]="mark.lng" [iconUrl]="'../../assets/water-drop.png'">
       		<sebm-google-map-info-window>
       			<strong>{{mark.company}}</strong>
             <h5>{{mark.prefferedDeliveryTime | datePipe }} </h5>

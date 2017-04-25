@@ -15,4 +15,5 @@ span.shop-closed:after {
 }
 .shop-opened {
 	cursor: pointer;
+	display: block;
 }

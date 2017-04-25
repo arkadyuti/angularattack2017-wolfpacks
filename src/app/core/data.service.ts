@@ -95,19 +95,29 @@ export class DataService {
         return res.name != item.name;
       })
     }
-
+    sessionStorage.setItem('cartItem', JSON.stringify(this.Cart));
   }
 
   getCartItems() {
-    return this.Cart;
+    if(sessionStorage['cartItem'] != undefined && sessionStorage['cartItem'].length > 0)
+      return JSON.parse(sessionStorage['cartItem']);
+    else 
+      return this.Items;
   }
 
   getTotalCartItems() {
-    let count = 0;
-    for(var key in this.Cart) {
-      count += +this.Cart[key]['qty'];
+    let count = 0,
+        CartItems = sessionStorage['cartItem'];
+        // debugger;
+    if(CartItems != undefined && CartItems.length > 0) {
+      let totalItems = JSON.parse(CartItems);
+      for(var key in totalItems) {
+        count += +totalItems[key]['qty'];
+      }
+      return count;
+    } else {
+      return 0;
     }
-    return count;
   }
 
 }

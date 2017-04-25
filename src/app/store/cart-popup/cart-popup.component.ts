@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class CartPopupComponent implements OnInit {
   form;
   confirmPopUp: boolean = false;
+  name: string;
+  address: string;
 	@Input() visiblity;
 	public alterDisplay = "displayNone";
 	public toggleDisplay : boolean = false;
@@ -49,9 +51,12 @@ export class CartPopupComponent implements OnInit {
 
   onSubmit(formFields) {
     this.confirmPopUp = true;
+    this.name = formFields.name;
+    this.address = formFields.address;
     setTimeout(()=>{
-      this.confirmPopUp = false
+      this.confirmPopUp = false;
     }, 4000);
+    sessionStorage.setItem('cartItem', '');
     this.handlePopup();
   }
 	ngOnInit() {
