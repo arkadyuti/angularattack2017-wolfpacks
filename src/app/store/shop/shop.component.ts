@@ -30,7 +30,8 @@ export class ShopComponent implements OnInit {
 
 	}
 	handleAddShopClick(e){
-		this.postAddShopDataFire("shops", this.uId, this.shopInputs)
+		this.postAddShopDataFire("shops", this.uId, this.shopInputs);
+		this.router.navigate(['userprofile']);
 	}
 
 	postAddShopDataFire(url, key, obj){

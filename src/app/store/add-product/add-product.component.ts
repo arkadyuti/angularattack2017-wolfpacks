@@ -27,7 +27,8 @@ export class AddProductComponent implements OnInit {
 
 	}
 	handleAddProductClick(e){
-		this.postAddProductDataFire("shops", this.uId, this.product)
+		this.postAddProductDataFire("shops", this.uId, this.product);
+    this.router.navigate(['/userprofile']);
 	}
 	postAddProductDataFire(url, key, obj){
         const itemObservable = this.af.database.list(url+'/'+key+'/products');
