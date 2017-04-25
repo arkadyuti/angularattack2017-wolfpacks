@@ -29,6 +29,7 @@ export class LoginComponent {
      {
         if (res.provider === 4)
         this.authenticated = true;
+      this.router.navigate(['/userprofile']);
       });
 
   }
