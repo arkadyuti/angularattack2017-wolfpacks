@@ -24,7 +24,7 @@ export class LoginComponent {
     this.router.navigate(['/userprofile']);
   }
 
-  public login() {
+  login() {
      this.af.auth.login({ email: this.email, password: this.password1}).then((res) => 
      {
         if (res.provider === 4)

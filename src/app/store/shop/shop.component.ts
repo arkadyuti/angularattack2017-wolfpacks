@@ -11,7 +11,8 @@ export class ShopComponent implements OnInit {
 	shopInputs = {
 		lat: "",
 		lng: ""
-	} 
+	} ;
+	product={}
 	uId : any;
 
 	constructor(private af: AngularFire, private router: Router){
@@ -30,13 +31,23 @@ export class ShopComponent implements OnInit {
 
 	}
 	handleAddShopClick(e){
-		this.postAddShopDataFire("shops", this.uId, this.shopInputs);
+		this.postAddShopDataFire("user", this.uId, this.shopInputs);
 		this.router.navigate(['userprofile']);
 	}
 
 	postAddShopDataFire(url, key, obj){
-        const itemObservable = this.af.database.object(url+'/'+key);
+        const itemObservable = this.af.database.object(url+'/'+key+'/shop'+obj);
         itemObservable.set(obj).catch((e)=> console.error(e.message) );
+
+        this.handleAddProductClick()
+    }
+    handleAddProductClick(){
+		this.postAddProductDataFire("user", this.uId, this.product);
+    	this.router.navigate(['/userprofile']);
+	}
+	postAddProductDataFire(url, key, obj){
+        const itemObservable = this.af.database.list(url+'/'+key+'/shop/product'+obj);
+        itemObservable.push(obj).catch((e)=> console.error(e.message) );
     }
     cancel(){
     	this.router.navigate(['/userprofile'])

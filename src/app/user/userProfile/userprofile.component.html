@@ -5,78 +5,20 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Sheena Shrestha</h3>
+              <h3 class="panel-title">Welcome</h3>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png" class="img-circle img-responsive"> </div>
                 </div>
-                <a type="button" href="/addstore" class="btn btn-danger">Add Store</a>
-                <a type="button" href="/addproduct" class="btn btn-danger">Add Products</a>
+                <a type="button" href="/addstore" class="btn btn-danger">Create Store</a>
+                
             </div>
                  
             
           </div>
-        </div>
+
+</div>
 
 
 
-    <div class="card-content vertical-center vertical-top">
-        <div class="row">
-            <h4>{{userData.address}}</h4>
-            <p>{{userData.name}}</p>
-            <p>{{userData.phonenumber}}</p>
-        </div>
-    </div>
-
-
-  <div class="container-fluid">
-    <div class="row" style="width: 90%;margin: 0 auto;">
-        <div class="col-md-12">
-                <div class="card card-plain">
-            <h4>{{userData.address}}</h4>
-            <p>{{userData.name}}</p>
-            <p>{{userData.phonenumber}}</p>
-        </div>
-    </div>
-  </div>
-  </div>
-        <div *ngIf = "!formDisplay" class="row">
-
-                 
-        <form>
-            <div class="row">
-                <div class="small-12 medium-6 columns">
-                    <label>Post Title
-                    <input type="text" [(ngModel)]="name" name="name" required >
-                    </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="small-12 medium-6 columns"> 
-                    <label>Address
-                    <input type="text" id="content" [(ngModel)]="address" name="address" required />
-                    
-                    </label>
-                </div>
-               <div class="small-12 medium-6 columns"> 
-                    <label>Phone number
-                    <input type="text" id="content" [(ngModel)]="phonenumber" name="phonenumber" required  />
-                    </label>
-                </div>
-            </div>
-            <div class="row align-center">
-                <div class="small-12 columns">
-                    <div class="expanded button-group">
-                    <button class="success button " type="button" [disabled]="!psTitle.valid || !psContent.valid" 
-                            (click)="createPost()">Create Post</button>
-                        <button class="cancel button" type="button" (click)="cancel()">Cancel</button>
-                    </div>
-                </div>
-            </div>
-
-        </form>
-
-
-        </div>
-       
