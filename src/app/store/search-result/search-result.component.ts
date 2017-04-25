@@ -26,13 +26,13 @@ export class SearchResultComponent implements OnInit {
 
   getListOfStores(object) {
 
-    this.dataService.fetchData().subscribe( (isData) => {
-      if(isData) {
+    //this.dataService.fetchData().subscribe( (isData) => {
+      //if(isData) {
         this.dataService.getItems().then( (res) => {
           this.listOfStores = res;
         });
-      }
-    })
+     // }
+    //})
 
    }
 

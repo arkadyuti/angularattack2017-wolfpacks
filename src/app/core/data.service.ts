@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { AngularFire } from 'angularfire2';
+const citydata =  require('./../../data/dbms.json');
+
 
 @Injectable()
 export class DataService {
@@ -36,10 +38,13 @@ export class DataService {
           return new Promise((resolve, reject) => {
             resolve(true);
     });*/
-      return this.http.get('http://www.mocky.io/v2/58ff051f110000050bf5fe6b').map( (res) => {
-           this.Items = res.json();
+    console.log(citydata);
+     let testData = citydata.availableStores;
+
+      return testData.map( (res) => {
+           this.Items = res;
            console.log(res)
-           return true;
+           return true
      });
   }
 
@@ -68,7 +73,7 @@ export class DataService {
       let highLatValue = this.location.lat + 0.3;
       let lowLngValue = this.location.lng - 0.3;
       let highLngValue = this.location.lng + 0.3;
-      let availableItems = this.Items.availableStores.filter( (key) => {
+      let availableItems = citydata.availableStores.filter( (key) => {
           if(key.lat > lowLatValue && key.lat < highLatValue && key.lng > lowLngValue && key.lng < highLngValue) {
             return key;
           }
