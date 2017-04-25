@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { AngularFire } from 'angularfire2';
-const citydata =  require('./../../data/dbms.json');
 
 
 @Injectable()
