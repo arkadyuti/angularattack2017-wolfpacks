@@ -36,7 +36,7 @@ export class DataService {
           return new Promise((resolve, reject) => {
             resolve(true);
     });*/
-      return this.http.get('./data/dbms.json').map( (res) => {
+      return this.http.get('/data/dbms.json').map( (res) => {
            this.Items = res.json();
            console.log(res)
            return true;

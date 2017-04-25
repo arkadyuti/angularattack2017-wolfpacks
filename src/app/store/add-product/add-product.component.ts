@@ -34,5 +34,8 @@ export class AddProductComponent implements OnInit {
         const itemObservable = this.af.database.list(url+'/'+key+'/products');
         itemObservable.push(obj).catch((e)=> console.error(e.message) );
     }
+    cancel(){
+      this.router.navigate(['/userprofile'])
+    }
 
 }

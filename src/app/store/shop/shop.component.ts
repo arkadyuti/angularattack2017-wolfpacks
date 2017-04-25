@@ -38,5 +38,7 @@ export class ShopComponent implements OnInit {
         const itemObservable = this.af.database.object(url+'/'+key);
         itemObservable.set(obj).catch((e)=> console.error(e.message) );
     }
-
+    cancel(){
+    	this.router.navigate(['/userprofile'])
+    }
 }
