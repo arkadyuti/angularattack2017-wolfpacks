@@ -21,31 +21,10 @@ export class DataService {
   }
 
   fetchData() {
-      let data = this.af.database.object('/shops', { preserveSnapshot: true });
-      /*data.subscribe(snapshot => {
-        let stores =[];
-          console.log(snapshot.key)
-          console.log(snapshot.val())
-          Object.keys(snapshot.val()).map((key)=>{
-            stores.push(snapshot.val()[key]);
-          });
-
-
-          this.Items =stores;
-          
-        });
-
-          return new Promise((resolve, reject) => {
-            resolve(true);
-    });*/
-    console.log(citydata);
-     let testData = citydata.availableStores;
-
-      return testData.map( (res) => {
-           this.Items = res;
-           console.log(res)
-           return true
-     });
+      return this.http.get('https://angularattack-b35c6.firebaseio.com/.json').map((res) => {
+        this.Items = res;
+        return true;
+      })
   }
 
   setLocation(obj) {
