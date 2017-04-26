@@ -15,5 +15,16 @@ span.shop-closed:after {
 }
 .shop-opened {
 	cursor: pointer;
-	display: block;
+    display: block;
+    margin: 10px 15px;
+    border-radius: 3px;
+    color: #3C4858;
+    background-color: transparent;
+    position: relative;
+    display: block;
+    padding: 10px 0px;
+}
+.shop-opened:hover {
+	background-color: rgba(200, 200, 200, 0.2);
+	color: #000;
 }
