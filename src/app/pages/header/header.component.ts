@@ -1,6 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { DataService } from '../../core/data.service';
 import { Router } from '@angular/router';
+import { PlatformLocation } from '@angular/common'
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Component({
@@ -14,8 +15,10 @@ export class HeaderComponent implements DoCheck {
   public isVisible = false;
   public isLoggedIn: boolean = false;
 
-  constructor(private af: AngularFire, private router: Router,private dataService: DataService){
-
+  constructor(private af: AngularFire, private router: Router,private dataService: DataService, location2: PlatformLocation){
+    location2.onPopState(() => {
+      this.router.navigate(['/home']);
+    });
     var self = this;
      af.auth.subscribe(user => {
             if(user){
@@ -27,6 +30,7 @@ export class HeaderComponent implements DoCheck {
   }
 
   ngDoCheck() {
+    
   	// this.cartList = this.dataService.getCartItems();
 
   	this.count = this.dataService.getTotalCartItems();
@@ -43,7 +47,9 @@ export class HeaderComponent implements DoCheck {
   signup() {
       this.router.navigate(['/signup']);
   }
-
+  ngOnInit() {
+    
+  }
   logout(){
   console.log("S");
       //this.af.auth.logout().then((d)=> console.log("E",d)).catch((e)=>console.log(e.message));
