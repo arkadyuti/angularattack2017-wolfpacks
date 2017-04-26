@@ -17,7 +17,7 @@ export class CartPopupComponent implements OnInit {
 	public alterDisplay = "displayNone";
 	public toggleDisplay : boolean = false;
 
-	public products = [];
+	products: any = [];
 
 
 	constructor(private dataService: DataService,
@@ -32,6 +32,7 @@ export class CartPopupComponent implements OnInit {
 			this.alterDisplay = "displayNone"
 		}
 
+    
 		this.products = this.dataService.getCartItems();
 		// this.visiblity ? this.alterDisplay = "displayVisible" : "displayNone";
 	}
@@ -60,7 +61,10 @@ export class CartPopupComponent implements OnInit {
     this.handlePopup();
   }
 	ngOnInit() {
-		this.products = this.dataService.getCartItems();
+    if(sessionStorage['cartItem'] != undefined && sessionStorage['cartItem'].length > 0)
+		    this.products = this.dataService.getCartItems();
+     else
+       this.products = [];
 		// this.toggleDisplay = this.visiblity
     this.form = this.formBuilder.group({
       name: this.formBuilder.control('', Validators.compose([
