@@ -21,7 +21,7 @@ export class DataService {
 
   fetchData() {
       return this.http.get('https://angularattack-b35c6.firebaseio.com/.json').map((res) => {
-        this.Items = res.json();
+        this.Items.availableStores = Object.keys(res.json().availableStores).map(store => res.json().availableStores[store]);
         return true;
       })
   }
@@ -101,7 +101,7 @@ export class DataService {
   getCartItems() {
     if(sessionStorage['cartItem'] != undefined && sessionStorage['cartItem'].length > 0)
       return JSON.parse(sessionStorage['cartItem']);
-    else 
+    else
       return this.Items;
   }
 

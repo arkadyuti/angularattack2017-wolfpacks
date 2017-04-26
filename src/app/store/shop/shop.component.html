@@ -17,18 +17,26 @@
                         <input type="text" [(ngModel)]="shopInputs.city" class="form-control" id="city" placeholder="City">
                     </div>
                     <div class="form-group">
+                        <label>State</label>
+                        <input type="text" [(ngModel)]="shopInputs.state" class="form-control" id="state" placeholder="State">
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" [(ngModel)]="shopInputs.country" class="form-control" id="country" placeholder="Country">
+                    </div>
+                    <div class="form-group">
                         <label>ZIP code</label>
                         <input type="text" [(ngModel)]="shopInputs.zip" class="form-control" id="zip" placeholder="ZIP">
                     </div>
                     <h4>Add Product</h4>
                     <div class="form-group">
                         <label>Product Name</label>
-                        <input type="text" [(ngModel)]="product.name" class="form-control" id="shopName" placeholder="Product Name">
+                        <input type="text" [(ngModel)]="product.name" class="form-control" id="productName" placeholder="Product Name">
                     </div>
 
                     <div class="form-group">
                         <label>Produt Type</label>
-                        <select>
+                        <select [(ngModel)]="product.type" class="form-control" id="productType" >
                           <option>Water Tanker</option>
                           <option>Water Can </option>
                           <option>Water Bottle</option>
@@ -36,11 +44,11 @@
                     </div>
                     <div class="form-group">
                         <label>Quantity</label>
-                        <input type="number" [(ngModel)]="product.quantity" class="form-control" id="city" placeholder="Quantity">
+                        <input type="number" [(ngModel)]="product.quantity" class="form-control" id="productQuantity" placeholder="Quantity">
                     </div>
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="number" [(ngModel)]="product.price" class="form-control" id="zip" placeholder="price">
+                        <input type="number" [(ngModel)]="product.price" class="form-control" id="productPrice" placeholder="price">
                     </div>
                     <button type="submit" (click)="handleAddShopClick($event)" class="btn btn-default">Submit</button>
                 <!-- </form> -->
@@ -58,7 +66,7 @@
                 <option> Himalaya Pure water</option>
             </select>
         </label>
-    
+
     <div class="col-md-8 ">
         <div class="expanded button-group">
             <a class="success button" (click)="addProduct()">Add Shop</a>
