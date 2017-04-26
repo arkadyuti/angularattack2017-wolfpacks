@@ -27,17 +27,8 @@ export class ShopComponent implements OnInit {
             }
         });
 	}
-	location = {};
-   setPosition(position){
-      this.location = position.coords;
-      console.log(position.coords);
-      }
+	
 	ngOnInit() {
-			navigator.geolocation
-			 if(navigator.geolocation){
-      		 navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
-     		 
-   		}
 			
 
 	}
@@ -49,7 +40,6 @@ export class ShopComponent implements OnInit {
 	}
 
 	postAddShopDataFire(url, key, obj){
-		debugger;
         const itemObservable = this.af.database.object(url+'/'+key+'/shop');
         itemObservable.set(obj).catch((e)=> console.error(e.message) );
 
@@ -64,7 +54,7 @@ export class ShopComponent implements OnInit {
         itemObservable.push(obj).catch((e)=> console.error(e.message) );
     }
     cancel(){
-    	this.router.navigate(['/userprofile'])
+    	this.router.navigate(['/search-result']);
     }
 
    
