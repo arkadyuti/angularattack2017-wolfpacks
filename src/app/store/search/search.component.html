@@ -2,7 +2,13 @@
 	<form #searchForm="ngForm" class="form-inline">
 		<div class="form-group">
 			<i class="material-icons">search</i>
-		    <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+			<div class="input-group">
+				<span class="input-group-addon" style="width: 42px;">
+					<i class="material-icons" style="right: initial;top: 6px;left: 10px;">search</i>
+				</span>
+				<input class="form-control" placeholder="Search for location" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+			</div>
+		    <!-- <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl"> -->
 		</div>
 	</form>
 </div>

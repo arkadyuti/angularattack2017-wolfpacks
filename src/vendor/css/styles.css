@@ -3,6 +3,7 @@ html, body {
 }
 body{
     background-color:  #EEEEEE;
+
 }
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
     /*font-family: "Roboto", "Helvetica", "Arial", sans-serif;*/
@@ -444,8 +445,8 @@ footer .foot-note {
 
 }
 .navbar-form .form-group {
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
 }
 .navbar-form .form-control {
     border-color: inherit;
