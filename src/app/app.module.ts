@@ -86,7 +86,7 @@ const firebaseConfig = {
     routes,
     AngularFireModule.initializeApp(firebaseConfig,firebaseAuthConfig),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDDG6hquOfH--R2ne4yCv086hDrkhFVXO4',
+      apiKey: 'AIzaSyBB2CpshuH077kJ_SyqpFZe1xO2AK2ogoQ',
       libraries: ["places"]
     })
   ],
